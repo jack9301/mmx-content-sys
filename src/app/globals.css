@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Source Serif Pro', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fdfdfc;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+}
+
+.prose blockquote {
+  border-left: 3px solid #14b8a6;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.prose h2 {
+  font-family: var(--font-serif);
+  margin-top: 2.5rem;
+}
+
+.prose h3 {
+  font-family: var(--font-serif);
+  margin-top: 2rem;
+}

@@ -1,0 +1,40 @@
+{
+  "site": {
+    "title": "Quiet Pages",
+    "tagline": "Articles, images, and quiet thoughts.",
+    "description": "A personal blog about writing, image, and observation."
+  },
+  "nav": {
+    "home": "Home",
+    "articles": "Articles",
+    "about": "About",
+    "search": "Search"
+  },
+  "home": {
+    "latest": "Latest articles",
+    "readMore": "Read article",
+    "minRead": "min read",
+    "noArticles": "No articles yet."
+  },
+  "article": {
+    "publishedOn": "Published on",
+    "by": "by",
+    "minRead": "min read",
+    "tags": "Tags",
+    "comments": "Comments",
+    "leaveComment": "Leave a comment",
+    "commentNote": "Comments are powered by GitHub Discussions via Giscus.",
+    "backToAll": "← Back to all articles",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "footer": {
+    "copyright": "© {year} {name}. All rights reserved.",
+    "builtWith": "Built with Next.js, deployed on Cloudflare Pages."
+  },
+  "search": {
+    "placeholder": "Search articles...",
+    "noResults": "No results for \"{query}\"",
+    "resultsCount": "{count, plural, =0 {No results} =1 {1 result} other {# results}} for \"{query}\""
+  }
+}

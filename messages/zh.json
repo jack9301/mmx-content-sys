@@ -1,0 +1,40 @@
+{
+  "site": {
+    "title": "静页",
+    "tagline": "文章、图片与安静的思考。",
+    "description": "一个关于写作、影像与观察的个人博客。"
+  },
+  "nav": {
+    "home": "首页",
+    "articles": "文章",
+    "about": "关于",
+    "search": "搜索"
+  },
+  "home": {
+    "latest": "最新文章",
+    "readMore": "阅读全文",
+    "minRead": "分钟阅读",
+    "noArticles": "还没有文章。"
+  },
+  "article": {
+    "publishedOn": "发布于",
+    "by": "作者",
+    "minRead": "分钟阅读",
+    "tags": "标签",
+    "comments": "评论",
+    "leaveComment": "发表评论",
+    "commentNote": "评论由 GitHub Discussions 通过 Giscus 提供支持。",
+    "backToAll": "← 返回所有文章",
+    "next": "下一篇",
+    "previous": "上一篇"
+  },
+  "footer": {
+    "copyright": "© {year} {name}。保留所有权利。",
+    "builtWith": "由 Next.js 构建，部署于 Cloudflare Pages。"
+  },
+  "search": {
+    "placeholder": "搜索文章...",
+    "noResults": "没有找到 \"{query}\" 的结果",
+    "resultsCount": "{count, plural, =0 {没有结果} other {找到 # 条结果}}：\"{query}\""
+  }
+}

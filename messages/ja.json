@@ -1,0 +1,40 @@
+{
+  "site": {
+    "title": "静かなるページ",
+    "tagline": "文章、画像、静かな思考。",
+    "description": "執筆、画像、そして観察についての個人ブログ。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "articles": "記事",
+    "about": "について",
+    "search": "検索"
+  },
+  "home": {
+    "latest": "最新の記事",
+    "readMore": "続きを読む",
+    "minRead": "分で読める",
+    "noArticles": "まだ記事がありません。"
+  },
+  "article": {
+    "publishedOn": "公開日",
+    "by": "著者",
+    "minRead": "分で読める",
+    "tags": "タグ",
+    "comments": "コメント",
+    "leaveComment": "コメントを残す",
+    "commentNote": "コメントは Giscus を通じて GitHub Discussions で運営されています。",
+    "backToAll": "← すべての記事に戻る",
+    "next": "次へ",
+    "previous": "前へ"
+  },
+  "footer": {
+    "copyright": "© {year} {name}. 全著作権所有。",
+    "builtWith": "Next.js で構築、Cloudflare Pages でデプロイ。"
+  },
+  "search": {
+    "placeholder": "記事を検索...",
+    "noResults": "「{query}」の結果がありません",
+    "resultsCount": "「{query}」の結果 {count} 件"
+  }
+}
