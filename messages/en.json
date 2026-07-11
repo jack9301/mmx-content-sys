@@ -26,7 +26,14 @@
     "commentNote": "Comments are powered by GitHub Discussions via Giscus.",
     "backToAll": "← Back to all articles",
     "next": "Next",
-    "previous": "Previous"
+    "previous": "Previous",
+    "name": "Your name",
+    "namePlaceholder": "Jane Doe",
+    "yourComment": "Your comment",
+    "commentPlaceholder": "Share your thoughts…",
+    "submit": "Submit comment",
+    "submitting": "Submitting…",
+    "noComments": "No comments yet. Be the first."
   },
   "footer": {
     "copyright": "© {year} {name}. All rights reserved.",

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getAllArticleSlugs, getArticleBySlug } from '@/lib/articles';
 import { ArticleHeader } from '@/components/article-header';
 import { ArticleFooter } from '@/components/article-footer';
-import { Comments } from '@/components/comments';
+import { CommentsWrapper } from '@/components/comments-wrapper';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
@@ -51,7 +51,7 @@ export default async function ArticlePage({
       </div>
 
       <ArticleFooter article={article} />
-      <Comments locale={locale} slug={slug} />
+      <CommentsWrapper slug={slug} locale={locale} />
     </article>
   );
 }

@@ -26,7 +26,14 @@
     "commentNote": "コメントは Giscus を通じて GitHub Discussions で運営されています。",
     "backToAll": "← すべての記事に戻る",
     "next": "次へ",
-    "previous": "前へ"
+    "previous": "前へ",
+    "name": "お名前",
+    "namePlaceholder": "山田 太郎",
+    "yourComment": "コメント",
+    "commentPlaceholder": "ご感想をどうぞ…",
+    "submit": "コメントを投稿",
+    "submitting": "投稿中…",
+    "noComments": "まだコメントはありません。最初の一言を。"
   },
   "footer": {
     "copyright": "© {year} {name}. 全著作権所有。",

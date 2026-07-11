@@ -26,7 +26,14 @@
     "commentNote": "评论由 GitHub Discussions 通过 Giscus 提供支持。",
     "backToAll": "← 返回所有文章",
     "next": "下一篇",
-    "previous": "上一篇"
+    "previous": "上一篇",
+    "name": "你的名字",
+    "namePlaceholder": "张三",
+    "yourComment": "你的评论",
+    "commentPlaceholder": "说点什么…",
+    "submit": "提交评论",
+    "submitting": "提交中…",
+    "noComments": "还没有评论。来做第一个吧。"
   },
   "footer": {
     "copyright": "© {year} {name}。保留所有权利。",
