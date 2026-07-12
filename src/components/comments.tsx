@@ -1,15 +1,13 @@
 'use client';
 
 import { useEffect, useState, useTransition } from 'react';
+import { useTranslations } from 'next-intl';
 import type { Comment } from '@/lib/comments/types';
 
-type Props = {
-  slug: string;
-  locale: string;
-  t: (key: string) => string;
-};
+type Props = { slug: string; locale: string };
 
-export function Comments({ slug, locale, t }: Props) {
+export function Comments({ slug, locale }: Props) {
+  const t = useTranslations('article');
   const [comments, setComments] = useState<Comment[]>([]);
   const [author, setAuthor] = useState('');
   const [content, setContent] = useState('');
@@ -18,11 +16,20 @@ export function Comments({ slug, locale, t }: Props) {
   const [message, setMessage] = useState<{ type: 'ok' | 'err'; text: string } | null>(null);
 
   async function load() {
-    setLoading(true);
-    const res = await fetch(`/api/comments?slug=${encodeURIComponent(slug)}&locale=${locale}`);
-    const data = await res.json();
-    setComments(data.comments || []);
-    setLoading(false);
+    try {
+      setLoading(true);
+      const res = await fetch(`/api/comments?slug=${encodeURIComponent(slug)}&locale=${locale}`);
+      if (res.ok) {
+        const data = await res.json();
+        setComments(data.comments || []);
+      } else {
+        setComments([]);
+      }
+    } catch {
+      setComments([]);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -33,18 +40,22 @@ export function Comments({ slug, locale, t }: Props) {
     e.preventDefault();
     setMessage(null);
     startSubmit(async () => {
-      const res = await fetch('/api/comments', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug, locale, author, content }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setMessage({ type: 'ok', text: data.message || 'Thanks! Your comment is awaiting review.' });
-        setAuthor('');
-        setContent('');
-      } else {
-        setMessage({ type: 'err', text: data.error || 'Something went wrong.' });
+      try {
+        const res = await fetch('/api/comments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug, locale, author, content }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          setMessage({ type: 'ok', text: data.message || 'Thanks! Your comment is awaiting review.' });
+          setAuthor('');
+          setContent('');
+        } else {
+          setMessage({ type: 'err', text: data.error || `Something went wrong (${res.status}).` });
+        }
+      } catch (err) {
+        setMessage({ type: 'err', text: 'Network error. Please try again.' });
       }
     });
   }
@@ -116,4 +127,8 @@ export function Comments({ slug, locale, t }: Props) {
       </div>
     </section>
   );
+}
+
+export function CommentsWrapper(props: Props) {
+  return <Comments {...props} />;
 }
