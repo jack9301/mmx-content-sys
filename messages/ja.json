@@ -1,47 +1,118 @@
 {
   "site": {
-    "title": "静かなるページ",
-    "tagline": "文章、画像、静かな思考。",
-    "description": "執筆、画像、そして観察についての個人ブログ。"
+    "title": "Quiet Pages",
+    "tagline": "文章、画像、そして静かな思考。",
+    "description": "書くこと、観ること、観察することについての個人ブログ。"
   },
   "nav": {
     "home": "ホーム",
     "articles": "記事",
     "about": "について",
+    "privacy": "プライバシー",
+    "cookies": "Cookie",
+    "disclosure": "開示",
     "search": "検索"
   },
   "home": {
-    "latest": "最新の記事",
-    "readMore": "続きを読む",
-    "minRead": "分で読める",
+    "latest": "最新記事",
+    "readMore": "記事を読む",
+    "minRead": "分で読了",
     "noArticles": "まだ記事がありません。"
   },
   "article": {
     "publishedOn": "公開日",
     "by": "著者",
-    "minRead": "分で読める",
+    "minRead": "分で読了",
     "tags": "タグ",
     "comments": "コメント",
     "leaveComment": "コメントを残す",
-    "commentNote": "コメントは Giscus を通じて GitHub Discussions で運営されています。",
+    "commentNote": "すべてのコメントは公開前に管理者によって確認されます。",
     "backToAll": "← すべての記事に戻る",
     "next": "次へ",
     "previous": "前へ",
     "name": "お名前",
     "namePlaceholder": "山田 太郎",
     "yourComment": "コメント",
-    "commentPlaceholder": "ご感想をどうぞ…",
-    "submit": "コメントを投稿",
-    "submitting": "投稿中…",
+    "commentPlaceholder": "あなたの考えを共有…",
+    "submit": "コメントを送信",
+    "submitting": "送信中…",
     "noComments": "まだコメントはありません。最初の一言を。"
   },
   "footer": {
-    "copyright": "© {year} {name}. 全著作権所有。",
-    "builtWith": "Next.js で構築、Cloudflare Pages でデプロイ。"
+    "copyright": "© {year} {name}. All rights reserved.",
+    "builtWith": "Built with Next.js, deployed on Cloudflare Pages.",
+    "legal": "法的事項",
+    "privacy": "プライバシー",
+    "cookies": "Cookie",
+    "disclosure": "開示",
+    "about": "について"
   },
   "search": {
     "placeholder": "記事を検索...",
-    "noResults": "「{query}」の結果がありません",
-    "resultsCount": "「{query}」の結果 {count} 件"
+    "noResults": "\"{query}\" に一致する結果はありません",
+    "resultsCount": "\"{query}\" の結果 {count, plural, =0 {0 件} other {# 件}}"
+  },
+  "about": {
+    "title": "について",
+    "intro": "書くこと、観ること、観察するための静かな場所。",
+    "body": "Quiet Pages は多言語の読書室です。記事はどれもゆっくりと読めるものばかりで、一つの考えにもう少し付き合いたいという人のために書かれています。新しい記事は数週間ごとに、英語、中国語、日本語で公開されます。",
+    "contact": "お問い合わせ",
+    "contactEmail": "hello@example.com"
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "lastUpdated": "最終更新",
+    "intro": "あなたのプライバシーは大切です。このページでは、Quiet Pages がどのような情報を収集し、どのように使用し、あなたがどのような選択を持てるかを説明します。",
+    "dataCollected": "収集する情報",
+    "dataCollectedBody": "Quiet Pages 自身は、ページの表示に必要な以上の個人情報を収集しません。サイトにアクセスする際、ホスティングプロバイダーである Cloudflare Pages が標準的なサーバーログ（IP アドレス、ユーザーエージェント、タイムスタンプ）を処理します。これらのログはセキュリティとパフォーマンスの監視のためにのみ使用され、販売や共有は一切行いません。",
+    "comments": "コメント",
+    "commentsBody": "コメントを残す際、保存されるのはあなたが入力した名前とコメント本文のみです。コメントはまず保留状態となり、管理者の承認を経てから公開されます。コメントは Cloudflare KV に保存され、ご要望に応じて削除できます。",
+    "cookies": "Cookie とトラッキング",
+    "cookiesBody": "当サイト自身はトラッキング Cookie を設定しません。サイトに埋め込まれた第三者サービス（解析、広告ネットワーク、埋め込み動画など）が独自の Cookie を設定する場合があります。詳細は Cookie ポリシーを参照してください。",
+    "rights": "あなたの権利",
+    "rightsBody": "当サイトにコメントを残したことがある、または情報を提供したことがある場合、そのデータの閲覧、訂正、削除を請求できます。关于ページに記載された連絡先から運営者までご連絡ください。",
+    "changes": "ポリシーの変更",
+    "changesBody": "本ポリシーが更新された場合、ページ上部の日付が更新されます。重要な変更は、次回のサイト更新時に記載されます。"
+  },
+  "cookies": {
+    "title": "Cookie ポリシー",
+    "lastUpdated": "最終更新",
+    "intro": "このページでは、Cookie とは何か、Quiet Pages がどの Cookie を使用しているか、そしてあなたがそれをどのように制御できるかを説明します。",
+    "what": "Cookie とは",
+    "whatBody": "Cookie は、ウェブサイトの利用時にブラウザに保存される小さなテキストファイルです。サイトの動作、嗜好の記憶、サイト運営者への情報提供のために広く使われています。",
+    "use": "使用する Cookie",
+    "useBody": "Quiet Pages 自身は、解析・広告・追跡のために Cookie を設定しません。当サイトは静的エクスポートとして構築されており、記事を閲覧するために Cookie は必要ありません。",
+    "thirdParty": "第三者の Cookie",
+    "thirdPartyBody": "第三者コンテンツ（別のドメインから配信される画像、フォント、動画など）を埋め込んだページを閲覧する際、その第三者が独自の Cookie を設定する場合があります。よくある例としては、Google Fonts からのフォント、CDN からの画像、解析スクリプトなどがあります。",
+    "control": "Cookie の制御方法",
+    "controlBody": "ほとんどのブラウザでは、設定から Cookie をブロックまたは削除できます。これらのオプションは通常、「プライバシー」「履歴」「サイトデータ」などの項目にあります。すべての Cookie をブロックすると一部のサイト機能が壊れる可能性がありますが、Quiet Pages 自体は問題なく閲覧できます。",
+    "more": "詳細情報",
+    "moreBody": "当サイトの Cookie について具体的なご質問がある場合は、关于ページから運営者までご連絡ください。"
+  },
+  "disclosure": {
+    "title": "アフィリエイト開示",
+    "lastUpdated": "最終更新",
+    "intro": "米連邦取引委員会のガイドラインおよび他の国々で対応する消費者保護規則に従い、このページでは Quiet Pages がアフィリエイトリンクをどのように使用しているかについて説明します。",
+    "what": "アフィリエイトリンクとは",
+    "whatBody": "アフィリエイトリンクとは、小売業者が当サイトからの紹介を追跡できるようにする特別な URL です。アフィリエイトリンクをクリックして購入に至った場合、小売業者が Quiet Pages に少額の手数料を支払います。購入者側に追加の費用は発生しません。",
+    "presence": "見分け方",
+    "presenceBody": "アフィリエイトリンクを含むすべての記事には明示的な表示があります。記事本文の冒頭、および各リンクや推奨ブロックの近辺に開示文が置かれます。リンクはスタイルを変えて表示されることもあり（小さなタグを付けるなど）、識別しやすくなっています。",
+    "recommendations": "編集の独立性",
+    "recommendationsBody": "アフィリエイト関係は、どの製品やサービスを推奨するかに影響を与えません。製品が言及されるのは、それが実際に有用で、質が高く、検討に値するからです。もし商業的な関係によって推奨が変更される場合、その変更は開示されます。",
+    "programs": "提携プログラム",
+    "programsBody": "Quiet Pages は Amazon アソシエイト、ShareASale、Impact などのアフィリエイトプログラムに参加している可能性があります。完全なリストは、新しいプログラムが追加されるたびに更新されます。",
+    "questions": "ご質問があれば",
+    "questionsBody": "本開示について、または当サイトの特定のアフィリエイト関係についてご質問がある場合は、关于ページからご連絡ください。"
+  },
+  "ads": {
+    "placeholder": "広告",
+    "sponsored": " sponsored"
+  },
+  "cookieConsent": {
+    "title": "Cookie と第三者コンテンツ",
+    "body": "当サイトは第三者サービス（解析や埋め込みメディアなど）を使用する可能性があり、それらは独自の Cookie を設定します。すべて受け入れるか、必要でないものを拒否するか、個別に設定することができます。",
+    "accept": "すべて受け入れる",
+    "reject": "必要でないものを拒否",
+    "manage": "設定を管理"
   }
 }

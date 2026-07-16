@@ -8,6 +8,9 @@
     "home": "Home",
     "articles": "Articles",
     "about": "About",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "disclosure": "Disclosure",
     "search": "Search"
   },
   "home": {
@@ -23,7 +26,7 @@
     "tags": "Tags",
     "comments": "Comments",
     "leaveComment": "Leave a comment",
-    "commentNote": "Comments are powered by GitHub Discussions via Giscus.",
+    "commentNote": "All comments are reviewed before they appear publicly.",
     "backToAll": "← Back to all articles",
     "next": "Next",
     "previous": "Previous",
@@ -37,11 +40,79 @@
   },
   "footer": {
     "copyright": "© {year} {name}. All rights reserved.",
-    "builtWith": "Built with Next.js, deployed on Cloudflare Pages."
+    "builtWith": "Built with Next.js, deployed on Cloudflare Pages.",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "disclosure": "Disclosure",
+    "about": "About"
   },
   "search": {
     "placeholder": "Search articles...",
     "noResults": "No results for \"{query}\"",
     "resultsCount": "{count, plural, =0 {No results} =1 {1 result} other {# results}} for \"{query}\""
+  },
+  "about": {
+    "title": "About",
+    "intro": "A quiet place for writing, image, and observation.",
+    "body": "Quiet Pages is a multilingual reading room. The articles are slow reads, written for people who still like to sit with an idea for more than a minute. New pieces appear every few weeks, in English, Chinese, and Japanese.",
+    "contact": "Get in touch",
+    "contactEmail": "hello@example.com"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "intro": "Your privacy matters. This page explains what information Quiet Pages collects, how it is used, and what choices you have.",
+    "dataCollected": "Information We Collect",
+    "dataCollectedBody": "Quiet Pages itself does not collect personal information beyond what is needed to deliver the page you requested. When you visit the site, standard server logs (IP address, user agent, timestamps) are processed by Cloudflare Pages as the hosting provider. These logs are used for security and performance monitoring and are not sold or shared.",
+    "comments": "Comments",
+    "commentsBody": "If you leave a comment, only the name and comment text you submit are stored. The comment is held for review and is not published until approved by a site administrator. Comments are stored in Cloudflare KV and can be deleted on request.",
+    "cookies": "Cookies and Tracking",
+    "cookiesBody": "This site does not set tracking cookies of its own. Third-party services embedded on the site (such as analytics, advertising networks, or embedded videos) may set their own cookies. See the Cookie Policy for details.",
+    "rights": "Your Rights",
+    "rightsBody": "If you have left a comment or otherwise provided information to this site, you can request a copy of that data, ask for it to be corrected, or ask for it to be deleted. Contact the site operator using the address on the About page.",
+    "changes": "Changes to This Policy",
+    "changesBody": "If this policy is updated, the date at the top of the page will change. Material changes will be noted in the next site update."
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated",
+    "intro": "This page explains what cookies are, which cookies Quiet Pages uses, and how you can control them.",
+    "what": "What Are Cookies",
+    "whatBody": "Cookies are small text files stored in your browser by a website. They are widely used to make sites work, to remember preferences, and to provide information to site operators.",
+    "use": "Cookies We Use",
+    "useBody": "Quiet Pages itself does not set cookies for analytics, advertising, or tracking. The site is built as a static export and does not require cookies to display articles.",
+    "thirdParty": "Third-Party Cookies",
+    "thirdPartyBody": "When you load a page that embeds third-party content (such as images, fonts, or videos served by another domain), that third party may set its own cookies. Common examples include fonts loaded from Google Fonts, images loaded from a content delivery network, or analytics scripts.",
+    "control": "How to Control Cookies",
+    "controlBody": "Most browsers let you block or delete cookies through their settings. You can usually find these options under Privacy, History, or Site Data. Blocking all cookies may break parts of some sites, but Quiet Pages itself will continue to work.",
+    "more": "More Information",
+    "moreBody": "If you have specific questions about cookies on this site, please contact the site operator through the About page."
+  },
+  "disclosure": {
+    "title": "Affiliate Disclosure",
+    "lastUpdated": "Last updated",
+    "intro": "In accordance with guidelines from the U.S. Federal Trade Commission and equivalent consumer protection rules in other jurisdictions, this page explains how Quiet Pages uses affiliate links.",
+    "what": "What Is an Affiliate Link",
+    "whatBody": "An affiliate link is a special URL that lets a retailer track referrals from this site. If you click an affiliate link and then make a purchase, the retailer pays Quiet Pages a small commission at no extra cost to you.",
+    "presence": "How You Can Identify Them",
+    "presenceBody": "Every article that contains affiliate links is marked clearly. Inline disclosures appear at the top of the article and next to each link or recommendation block. Links may also be styled differently (such as with a small tag) to make them easy to spot.",
+    "recommendations": "Editorial Independence",
+    "recommendationsBody": "Affiliate relationships do not influence which products or services are recommended. A product is mentioned only because it is genuinely useful, well-made, or worth considering. If a recommendation ever changes due to a commercial relationship, that change is disclosed.",
+    "programs": "Programs",
+    "programsBody": "Quiet Pages may participate in affiliate programs such as Amazon Associates, ShareASale, Impact, and others. The full list is updated as new programs are added.",
+    "questions": "Questions",
+    "questionsBody": "If you have any questions about this disclosure or specific affiliate relationships on this site, please reach out through the About page."
+  },
+  "ads": {
+    "placeholder": "Advertisement",
+    "sponsored": "Sponsored"
+  },
+  "cookieConsent": {
+    "title": "Cookies and third-party content",
+    "body": "This site may use third-party services (such as analytics or embedded media) that set their own cookies. You can accept all, reject non-essential, or manage preferences.",
+    "accept": "Accept all",
+    "reject": "Reject non-essential",
+    "manage": "Manage preferences"
   }
 }

@@ -1,20 +1,23 @@
 {
   "site": {
     "title": "静页",
-    "tagline": "文章、图片与安静的思考。",
+    "tagline": "文章、图像，与安静的想法。",
     "description": "一个关于写作、影像与观察的个人博客。"
   },
   "nav": {
     "home": "首页",
     "articles": "文章",
     "about": "关于",
+    "privacy": "隐私",
+    "cookies": "Cookie",
+    "disclosure": "披露",
     "search": "搜索"
   },
   "home": {
     "latest": "最新文章",
     "readMore": "阅读全文",
     "minRead": "分钟阅读",
-    "noArticles": "还没有文章。"
+    "noArticles": "暂无文章。"
   },
   "article": {
     "publishedOn": "发布于",
@@ -23,25 +26,93 @@
     "tags": "标签",
     "comments": "评论",
     "leaveComment": "发表评论",
-    "commentNote": "评论由 GitHub Discussions 通过 Giscus 提供支持。",
+    "commentNote": "所有评论在公开显示前都会经过审核。",
     "backToAll": "← 返回所有文章",
     "next": "下一篇",
     "previous": "上一篇",
     "name": "你的名字",
     "namePlaceholder": "张三",
     "yourComment": "你的评论",
-    "commentPlaceholder": "说点什么…",
+    "commentPlaceholder": "分享你的想法…",
     "submit": "提交评论",
-    "submitting": "提交中…",
+    "submitting": "正在提交…",
     "noComments": "还没有评论。来做第一个吧。"
   },
   "footer": {
-    "copyright": "© {year} {name}。保留所有权利。",
-    "builtWith": "由 Next.js 构建，部署于 Cloudflare Pages。"
+    "copyright": "© {year} {name}. 保留所有权利。",
+    "builtWith": "使用 Next.js 构建，部署于 Cloudflare Pages。",
+    "legal": "法律",
+    "privacy": "隐私",
+    "cookies": "Cookie",
+    "disclosure": "披露",
+    "about": "关于"
   },
   "search": {
     "placeholder": "搜索文章...",
     "noResults": "没有找到 \"{query}\" 的结果",
-    "resultsCount": "{count, plural, =0 {没有结果} other {找到 # 条结果}}：\"{query}\""
+    "resultsCount": "{count, plural, =0 {没有结果} other {# 条结果}} 匹配 \"{query}\""
+  },
+  "about": {
+    "title": "关于",
+    "intro": "一个安静的地方，写字、看图、观察。",
+    "body": "静页是一个多语言的阅读空间。这里的文章节奏慢一些，写给那些还愿意为一个想法停留片刻的人。新内容每隔几周更新一次，提供英文、中文和日文版本。",
+    "contact": "联系作者",
+    "contactEmail": "hello@example.com"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新",
+    "intro": "你的隐私重要。本页说明静页收集哪些信息、如何使用，以及你拥有哪些选择。",
+    "dataCollected": "我们收集的信息",
+    "dataCollectedBody": "静页本身不会收集超过页面展示所需的个人信息。当你访问本站时，作为托管提供方的 Cloudflare Pages 会处理标准的服务端日志（IP 地址、用户代理、时间戳）。这些日志仅用于安全与性能监控，不会被出售或分享。",
+    "comments": "评论",
+    "commentsBody": "当你留下评论时，只会保存你提交的名字和评论内容。评论会先进入审核状态，在管理员通过之前不会公开显示。评论存储在 Cloudflare KV 中，可应要求删除。",
+    "cookies": "Cookie 与追踪",
+    "cookiesBody": "本站自身不设置追踪 Cookie。嵌入的第三方服务（如分析、广告网络、嵌入视频）可能会设置它们自己的 Cookie，详见 Cookie 政策。",
+    "rights": "你的权利",
+    "rightsBody": "如果你曾在本站留下评论或提供过信息，可以请求查看、修改或删除这些数据。请通过关于页上的联系方式与运营者联系。",
+    "changes": "政策变更",
+    "changesBody": "如果本政策更新，页面顶部的日期会相应变更。重要变更会在下次站点更新时说明。"
+  },
+  "cookies": {
+    "title": "Cookie 政策",
+    "lastUpdated": "最后更新",
+    "intro": "本页说明什么是 Cookie、静页使用了哪些 Cookie，以及你如何控制它们。",
+    "what": "什么是 Cookie",
+    "whatBody": "Cookie 是浏览器为网站保存的小文本文件。它们被广泛用于让网站正常工作、记住偏好，以及向网站运营者提供信息。",
+    "use": "我们使用的 Cookie",
+    "useBody": "静页自身不为分析、广告或追踪设置 Cookie。站点以静态方式构建，浏览文章不需要任何 Cookie。",
+    "thirdParty": "第三方 Cookie",
+    "thirdPartyBody": "当你打开嵌入了第三方内容的页面（例如从其他域名加载的图像、字体或视频），该第三方可能会设置自己的 Cookie。常见例子包括从 Google Fonts 加载的字体、从内容分发网络加载的图片，或分析脚本。",
+    "control": "如何控制 Cookie",
+    "controlBody": "大多数浏览器允许你在设置中屏蔽或删除 Cookie。这些选项通常在「隐私」「历史记录」或「站点数据」中。屏蔽所有 Cookie 可能会影响部分站点的功能，但静页本身仍可正常使用。",
+    "more": "更多信息",
+    "moreBody": "如果你对本站的 Cookie 有具体问题，请通过关于页联系运营者。"
+  },
+  "disclosure": {
+    "title": "联盟营销披露",
+    "lastUpdated": "最后更新",
+    "intro": "根据美国联邦贸易委员会及其他国家相应消费者保护规则的要求，本页说明静页如何使用联盟链接。",
+    "what": "什么是联盟链接",
+    "whatBody": "联盟链接是一种特殊 URL，可以让零售商追踪来自本站的推荐。如果你点击联盟链接并完成购买，零售商将向静页支付一笔小额佣金，对你来说不产生任何额外费用。",
+    "presence": "如何识别它们",
+    "presenceBody": "每一篇包含联盟链接的文章都会清晰标注。披露说明会出现在文章顶部以及每个链接或推荐区块附近。链接也可能以不同的样式显示（例如带有小标签），便于识别。",
+    "recommendations": "编辑独立性",
+    "recommendationsBody": "联盟关系不会影响推荐哪些产品或服务。某个产品被提及，仅仅因为它真的有用、做得好，或值得考虑。如果因商业关系导致推荐发生变化，这种变化会被披露。",
+    "programs": "合作项目",
+    "programsBody": "静页可能参与 Amazon Associates、ShareASale、Impact 等联盟营销项目。完整列表会随新项目加入而更新。",
+    "questions": "如有疑问",
+    "questionsBody": "如果你对本披露或本站特定联盟关系有任何问题，请通过关于页联系我们。"
+  },
+  "ads": {
+    "placeholder": "广告",
+    "sponsored": "赞助内容"
+  },
+  "cookieConsent": {
+    "title": "Cookie 与第三方内容",
+    "body": "本站可能使用第三方服务（如分析或嵌入媒体），它们会设置自己的 Cookie。你可以选择全部接受、拒绝非必要项，或管理偏好。",
+    "accept": "全部接受",
+    "reject": "拒绝非必要",
+    "manage": "管理偏好"
   }
 }
