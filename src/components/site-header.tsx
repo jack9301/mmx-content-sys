@@ -3,6 +3,7 @@
 import { Link, usePathname } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from './language-switcher';
+import { Search as SearchIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function SiteHeader({ locale }: { locale: string }) {
@@ -34,6 +35,16 @@ export function SiteHeader({ locale }: { locale: string }) {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/search"
+            aria-label={t('search')}
+            className={cn(
+              'flex items-center text-neutral-600 transition hover:text-neutral-900',
+              pathname === '/search' && 'text-neutral-900',
+            )}
+          >
+            <SearchIcon className="h-4 w-4" strokeWidth={1.75} />
+          </Link>
           <LanguageSwitcher currentLocale={locale} />
         </nav>
       </div>
