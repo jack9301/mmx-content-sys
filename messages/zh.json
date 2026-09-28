@@ -11,7 +11,19 @@
     "privacy": "隐私",
     "cookies": "Cookie",
     "disclosure": "披露",
-    "search": "搜索"
+    "search": "搜索",
+    "sections": {
+      "health": "健康",
+      "essays": "随笔"
+    },
+    "categories": {
+      "prostateConditions": "前列腺疾病",
+      "prostateConditionsDesc": "介绍各类前列腺疾病的文章：定义、症状与诊断方式。",
+      "treatmentRecovery": "治疗与康复",
+      "treatmentRecoveryDesc": "聚焦治疗方案、日常习惯与康复策略的文章。",
+      "slowLiving": "慢生活",
+      "slowLivingDesc": "关于专注、观察与更慢生活节奏的随笔。"
+    }
   },
   "home": {
     "latest": "最新文章",
@@ -46,6 +58,12 @@
     "cookies": "Cookie",
     "disclosure": "披露",
     "about": "关于"
+  },
+  "category": {
+    "title": "分类",
+    "noArticles": "此分类下还没有文章。",
+    "exploreMore": "查看更多",
+    "menu": "菜单"
   },
   "search": {
     "placeholder": "搜索文章...",
