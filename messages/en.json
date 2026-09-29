@@ -17,10 +17,16 @@
       "essays": "Essays"
     },
     "categories": {
-      "prostateConditions": "Prostate Conditions",
-      "prostateConditionsDesc": "Articles defining what each prostate condition is, what it feels like, and how it is diagnosed.",
-      "treatmentRecovery": "Treatment & Recovery",
-      "treatmentRecoveryDesc": "Articles focused on what to do: treatments, daily habits, and recovery strategies.",
+      "symptoms": "Symptoms",
+      "symptomsDesc": "Articles about identifying conditions: signs, signals, and what to look for.",
+      "conditions": "Conditions",
+      "conditionsDesc": "Articles defining and discussing specific prostate conditions.",
+      "treatment": "Treatment",
+      "treatmentDesc": "Articles about how to treat and manage conditions.",
+      "causesRisk": "Causes & Risk",
+      "causesRiskDesc": "Articles about why things happen: triggers, risk factors, and underlying causes.",
+      "lifestyle": "Lifestyle",
+      "lifestyleDesc": "Articles on daily habits, prevention, and living with a condition.",
       "slowLiving": "Slow Living",
       "slowLivingDesc": "Essays about attention, observation, and a quieter pace of life."
     }

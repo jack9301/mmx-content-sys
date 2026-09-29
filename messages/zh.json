@@ -17,10 +17,16 @@
       "essays": "随笔"
     },
     "categories": {
-      "prostateConditions": "前列腺疾病",
-      "prostateConditionsDesc": "介绍各类前列腺疾病的文章：定义、症状与诊断方式。",
-      "treatmentRecovery": "治疗与康复",
-      "treatmentRecoveryDesc": "聚焦治疗方案、日常习惯与康复策略的文章。",
+      "symptoms": "症状",
+      "symptomsDesc": "关于识别疾病信号、症状与需要关注的迹象的文章。",
+      "conditions": "疾病介绍",
+      "conditionsDesc": "介绍与讨论各类具体疾病的文章。",
+      "treatment": "治疗",
+      "treatmentDesc": "关于如何治疗与管理疾病的文章。",
+      "causesRisk": "病因与风险",
+      "causesRiskDesc": "关于疾病发生原因的文章：诱因、风险因素与潜在机制。",
+      "lifestyle": "生活方式",
+      "lifestyleDesc": "关于日常习惯、预防与疾病共存的文章。",
       "slowLiving": "慢生活",
       "slowLivingDesc": "关于专注、观察与更慢生活节奏的随笔。"
     }

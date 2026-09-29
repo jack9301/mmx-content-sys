@@ -6,20 +6,28 @@
  * the global /articles page (not in any category listing).
  */
 
-export type ArticleCategory = 'prostate-conditions' | 'treatment-recovery' | 'slow-living';
+export type ArticleCategory =
+  | 'symptoms'
+  | 'conditions'
+  | 'treatment'
+  | 'causes-risk'
+  | 'lifestyle'
+  | 'slow-living';
 
 export const articleCategoryMap: Record<string, ArticleCategory> = {
-  // Prostate Conditions (what it is, what it feels like)
-  'understanding-prostatitis': 'prostate-conditions',
-  'prostatitis-types-explained': 'prostate-conditions',
-  'bph-explained': 'prostate-conditions',
-  'prostate-cancer-guide': 'prostate-conditions',
-  'prostate-stones-explained': 'prostate-conditions',
-  'prostate-cysts-explained': 'prostate-conditions',
+  // Conditions (what it is)
+  'prostatitis-types-explained': 'conditions',
+  'bph-explained': 'conditions',
+  'prostate-cancer-guide': 'conditions',
+  'prostate-stones-explained': 'conditions',
+  'prostate-cysts-explained': 'conditions',
 
-  // Treatment & Recovery (what to do)
-  'chronic-prostatitis-recovery': 'treatment-recovery',
-  'prostate-milking': 'treatment-recovery',
+  // Treatment (what to do)
+  'chronic-prostatitis-recovery': 'treatment',
+  'prostate-milking': 'treatment',
+
+  // Lifestyle (daily habits, prevention)
+  'understanding-prostatitis': 'lifestyle',
 
   // Slow Living (essays)
   'on-slow-looking': 'slow-living',

@@ -17,10 +17,16 @@
       "essays": "エッセイ"
     },
     "categories": {
-      "prostateConditions": "前立腺の疾患",
-      "prostateConditionsDesc": "前立腺の様々な疾患について、その定義、症状、診断法を解説する記事。",
-      "treatmentRecovery": "治療と回復",
-      "treatmentRecoveryDesc": "治療法、日常生活の習慣、回復戦略に焦点を当てた記事。",
+      "symptoms": "症状",
+      "symptomsDesc": "症状を見極めるための記事。徴候、信号、注意すべきポイント。",
+      "conditions": "疾患",
+      "conditionsDesc": "特定の前立腺疾患について定義・解説する記事。",
+      "treatment": "治療",
+      "treatmentDesc": "疾患の治療法や管理方法について解説する記事。",
+      "causesRisk": "原因とリスク",
+      "causesRiskDesc": "なぜそれが起こるのかについて：引き金、リスク要因、根本的な原因。",
+      "lifestyle": "ライフスタイル",
+      "lifestyleDesc": "日常生活の習慣、予防、疾患との共生についての記事。",
       "slowLiving": "スロー・ライフ",
       "slowLivingDesc": "注意力、観察、そしてより静かな生活のリズムについてのエッセイ。"
     }

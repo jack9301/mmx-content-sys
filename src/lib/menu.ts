@@ -2,16 +2,13 @@
  * Centralized site menu architecture.
  *
  * To extend later, just add another entry to the appropriate top-level
- * section's `items` array. Each item is one of:
- *   - { kind: 'category', slug, label, items: [{ slug, label }] }
+ * section's `items` array. Items can be:
+ *   - { kind: 'category', slug, labelKey, descriptionKey?, items?: [...] }
  *   - { kind: 'link', href, label }
  *
- * The mapping of `slug` to articles lives in `article-categories.ts`.
- * Categories with no articles are still rendered in the menu but show an
- * "empty" state on the listing page, so we can pre-build buckets.
+ * Categories can be nested (a category can have its own `items` array).
+ * A nested category also gets its own page at /[locale]/category/[slug].
  */
-
-import type { ReactNode } from 'react';
 
 export type MenuLink = {
   kind: 'link';
@@ -28,14 +25,18 @@ export type MenuCategory = {
   labelKey: string;
   /** Optional short description for the category page header */
   descriptionKey?: string;
+  /** Optional nested sub-categories. Leaf categories have no items. */
+  items?: MenuCategory[];
 };
+
+export type MenuItem = MenuCategory | MenuLink;
 
 export type MenuSection = {
   kind: 'section';
   /** Translation key inside `messages.{locale}.json` under `nav.sections.{slug}` */
   slug: string;
   labelKey: string;
-  items: (MenuCategory | MenuLink)[];
+  items: MenuItem[];
 };
 
 export type Menu = {
@@ -43,8 +44,27 @@ export type Menu = {
 };
 
 /**
+ * Flat list of every category, in menu order. Used to generate static params.
+ * Walked recursively.
+ */
+export function flattenCategories(menu: Menu): MenuCategory[] {
+  const out: MenuCategory[] = [];
+  const walk = (cats: MenuItem[]) => {
+    for (const c of cats) {
+      if (c.kind === 'category') {
+        out.push(c);
+        if (c.items?.length) walk(c.items);
+      }
+    }
+  };
+  for (const section of menu.sections) walk(section.items);
+  return out;
+}
+
+/**
  * Single source of truth for the whole site menu.
- * Translations live in messages/{en,zh,ja}.json under `nav.sections.*` and `nav.categories.*`.
+ * Translations live in messages/{en,zh,ja}.json under `nav.sections.*` and
+ * `nav.categories.*`.
  */
 export const menu: Menu = {
   sections: [
@@ -55,19 +75,34 @@ export const menu: Menu = {
       items: [
         {
           kind: 'category',
-          slug: 'prostate-conditions',
-          labelKey: 'prostateConditions',
-          descriptionKey: 'prostateConditionsDesc',
+          slug: 'symptoms',
+          labelKey: 'symptoms',
+          descriptionKey: 'symptomsDesc',
         },
         {
           kind: 'category',
-          slug: 'treatment-recovery',
-          labelKey: 'treatmentRecovery',
-          descriptionKey: 'treatmentRecoveryDesc',
+          slug: 'conditions',
+          labelKey: 'conditions',
+          descriptionKey: 'conditionsDesc',
         },
-        // Future-proof: just add another category here when you write one
-        // Example: { kind: 'category', slug: 'symptoms', labelKey: 'symptoms' },
-        // Example: { kind: 'category', slug: 'causes-risk', labelKey: 'causesRisk' },
+        {
+          kind: 'category',
+          slug: 'treatment',
+          labelKey: 'treatment',
+          descriptionKey: 'treatmentDesc',
+        },
+        {
+          kind: 'category',
+          slug: 'causes-risk',
+          labelKey: 'causesRisk',
+          descriptionKey: 'causesRiskDesc',
+        },
+        {
+          kind: 'category',
+          slug: 'lifestyle',
+          labelKey: 'lifestyle',
+          descriptionKey: 'lifestyleDesc',
+        },
       ],
     },
     {
@@ -81,8 +116,6 @@ export const menu: Menu = {
           labelKey: 'slowLiving',
           descriptionKey: 'slowLivingDesc',
         },
-        // Future-proof: add more essay categories here later
-        // Example: { kind: 'category', slug: 'travel', labelKey: 'travel' },
       ],
     },
   ],

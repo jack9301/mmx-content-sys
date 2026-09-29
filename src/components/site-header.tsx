@@ -195,16 +195,19 @@ function MenuDropdown({
                 </Link>
               );
             }
-            return (
-              <Link
-                key={item.href}
-                href={item.href as any}
-                role="menuitem"
-                className="block rounded px-3 py-2 text-sm text-neutral-700 transition hover:bg-neutral-50"
-              >
-                {item.label}
-              </Link>
-            );
+            if (item.kind === 'link') {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href as any}
+                  role="menuitem"
+                  className="block rounded px-3 py-2 text-sm text-neutral-700 transition hover:bg-neutral-50"
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+            return null;
           })}
         </div>
       )}
@@ -285,15 +288,18 @@ function MobileDrawer({
                         </Link>
                       );
                     }
-                    return (
-                      <Link
-                        key={item.href}
-                        href={item.href as any}
-                        className="block rounded px-3 py-2 text-sm text-neutral-600 transition hover:bg-neutral-50"
-                      >
-                        {item.label}
-                      </Link>
-                    );
+                    if (item.kind === 'link') {
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href as any}
+                          className="block rounded px-3 py-2 text-sm text-neutral-600 transition hover:bg-neutral-50"
+                        >
+                          {item.label}
+                        </Link>
+                      );
+                    }
+                    return null;
                   })}
                 </div>
               )}
