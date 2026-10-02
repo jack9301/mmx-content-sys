@@ -5,6 +5,36 @@
 :root {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: 'Source Serif Pro', Georgia, serif;
+
+  --bg: #fdfdfc;
+  --bg-elev: #ffffff;
+  --bg-soft: #f7f7f4;
+  --fg: #1a1a1a;
+  --fg-soft: #4b5563;
+  --fg-muted: #6b7280;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+  --header-bg: rgba(253, 253, 252, 0.85);
+  --accent: #0f766e;
+  --accent-soft: #14b8a6;
+  --link: #0f766e;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+  --bg: #0e1116;
+  --bg-elev: #161a21;
+  --bg-soft: #1a1f27;
+  --fg: #e8e8ea;
+  --fg-soft: #a8acb4;
+  --fg-muted: #8b9098;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --header-bg: rgba(14, 17, 22, 0.85);
+  --accent: #2dd4bf;
+  --accent-soft: #5eead4;
+  --link: #5eead4;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 html {
@@ -12,10 +42,30 @@ html {
 }
 
 body {
-  background-color: #fdfdfc;
-  color: #1a1a1a;
+  background-color: var(--bg);
+  color: var(--fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+/* Smooth theme transitions on common elements */
+*,
+*::before,
+*::after {
+  border-color: var(--border);
+}
+
+header,
+footer,
+.bg-elev {
+  background-color: var(--header-bg);
+  backdrop-filter: blur(8px);
+}
+
+/* Article prose styling */
+.prose {
+  color: var(--fg);
 }
 
 .prose img {
@@ -24,18 +74,47 @@ body {
 }
 
 .prose blockquote {
-  border-left: 3px solid #14b8a6;
+  border-left: 3px solid var(--accent-soft);
   padding-left: 1rem;
   font-style: italic;
-  color: #4b5563;
+  color: var(--fg-soft);
 }
 
 .prose h2 {
   font-family: var(--font-serif);
   margin-top: 2.5rem;
+  color: var(--fg);
 }
 
 .prose h3 {
   font-family: var(--font-serif);
   margin-top: 2rem;
+  color: var(--fg);
+}
+
+.prose a {
+  color: var(--link);
+}
+
+.prose strong {
+  color: var(--fg);
+}
+
+.prose code {
+  background-color: var(--bg-soft);
+  color: var(--fg);
+}
+
+.prose table {
+  border-color: var(--border-strong);
+}
+
+.prose th,
+.prose td {
+  border-color: var(--border);
+}
+
+/* Cookie consent + drawer shadow */
+.drawer-shadow {
+  box-shadow: var(--shadow);
 }

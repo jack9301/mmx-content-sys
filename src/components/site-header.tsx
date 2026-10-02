@@ -5,6 +5,7 @@ import { Link, usePathname } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { Search as SearchIcon, Menu as MenuIcon, X as XIcon, ChevronDown } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
+import { ThemeToggle } from './theme-toggle';
 import { menu, type MenuSection } from '@/lib/menu';
 import { cn } from '@/lib/utils';
 
@@ -42,7 +43,7 @@ export function SiteHeader({ locale }: { locale: string }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200/60 bg-[#fdfdfc]/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-neutral-200/60 bg-[#fdfdfc]/80 backdrop-blur dark:border-neutral-800 dark:bg-[#0e1116]/80">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <Link href="/" className="font-serif text-xl font-medium tracking-tight">
           {tSite('title')}
@@ -96,17 +97,21 @@ export function SiteHeader({ locale }: { locale: string }) {
           </Link>
 
           <LanguageSwitcher currentLocale={locale} />
+          <ThemeToggle />
         </nav>
 
-        {/* Mobile hamburger button */}
-        <button
-          type="button"
-          aria-label="Open menu"
-          onClick={() => setMobileOpen(true)}
-          className="flex h-9 w-9 items-center justify-center rounded text-neutral-700 transition hover:bg-neutral-100 md:hidden"
-        >
-          <MenuIcon className="h-5 w-5" strokeWidth={1.75} />
-        </button>
+        {/* Mobile: theme toggle + hamburger button */}
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            aria-label="Open menu"
+            onClick={() => setMobileOpen(true)}
+            className="flex h-9 w-9 items-center justify-center rounded text-neutral-700 transition hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
+          >
+            <MenuIcon className="h-5 w-5" strokeWidth={1.75} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile drawer */}

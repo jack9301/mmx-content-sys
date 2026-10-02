@@ -6,6 +6,7 @@ import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { BackToTop } from '@/components/back-to-top';
 import { CookieConsent } from '@/components/cookie-consent';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -25,13 +26,15 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <div className="flex min-h-screen flex-col">
-        <SiteHeader locale={locale} />
-        <main className="flex-1">{children}</main>
-        <SiteFooter locale={locale} />
-        <BackToTop />
-        <CookieConsent />
-      </div>
+      <ThemeProvider>
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader locale={locale} />
+          <main className="flex-1">{children}</main>
+          <SiteFooter locale={locale} />
+          <BackToTop />
+          <CookieConsent />
+        </div>
+      </ThemeProvider>
     </NextIntlClientProvider>
   );
 }
