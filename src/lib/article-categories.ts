@@ -15,6 +15,9 @@ export type ArticleCategory =
   | 'slow-living';
 
 export const articleCategoryMap: Record<string, ArticleCategory> = {
+  // Symptoms
+  'prostate-symptoms-explained': 'symptoms',
+
   // Conditions (what it is)
   'prostatitis-types-explained': 'conditions',
   'bph-explained': 'conditions',
