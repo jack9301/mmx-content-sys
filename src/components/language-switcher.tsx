@@ -27,19 +27,19 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="text-sm text-neutral-600 hover:text-neutral-900"
+        className="text-sm text-neutral-600 hover:text-neutral-900 dark:hover:text-neutral-100 dark:text-neutral-100"
         aria-label="Switch language"
       >
         {labels[currentLocale] ?? currentLocale.toUpperCase()}
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-2 min-w-[80px] rounded-md border border-neutral-200 bg-white py-1 shadow-md">
+        <div className="absolute right-0 top-full mt-2 min-w-[80px] rounded-md border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 py-1 shadow-md">
           {routing.locales.map((loc) => (
             <button
               key={loc}
               onClick={() => switchTo(loc)}
-              className={`block w-full px-3 py-1.5 text-left text-sm hover:bg-neutral-50 ${
-                loc === currentLocale ? 'font-medium text-accent' : 'text-neutral-700'
+              className={`block w-full px-3 py-1.5 text-left text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800/40 dark:bg-neutral-800/60 ${
+                loc === currentLocale ? 'font-medium text-accent' : 'text-neutral-700 dark:text-neutral-300'
               }`}
             >
               {labels[loc]}

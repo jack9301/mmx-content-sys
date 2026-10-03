@@ -85,14 +85,14 @@ export function SearchClient({ articles }: { articles: SearchableArticle[] }) {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
       <header className="mb-10">
-        <h1 className="font-serif text-4xl font-medium tracking-tight text-neutral-900">
+        <h1 className="font-serif text-4xl font-medium tracking-tight text-neutral-900 dark:text-neutral-100">
           {t('placeholder')}
         </h1>
       </header>
 
       <div className="relative mb-8">
         <SearchIcon
-          className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-400"
+          className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-400 dark:text-neutral-500"
           strokeWidth={1.75}
         />
         <input
@@ -102,14 +102,14 @@ export function SearchClient({ articles }: { articles: SearchableArticle[] }) {
           placeholder={t('placeholder')}
           autoFocus
           aria-label={t('placeholder')}
-          className="w-full rounded-lg border border-neutral-200 bg-white py-3 pl-12 pr-12 text-base text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-neutral-400 focus:ring-2 focus:ring-[#0f766e]/20"
+          className="w-full rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 py-3 pl-12 pr-12 text-base text-neutral-900 dark:text-neutral-100 outline-none transition placeholder:text-neutral-400 dark:text-neutral-500 focus:border-neutral-400 focus:ring-2 focus:ring-[#0f766e]/20"
         />
         {query && (
           <button
             type="button"
             onClick={() => setQuery('')}
             aria-label="Clear"
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-1 text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-700"
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-1 text-neutral-400 transition hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:bg-neutral-800 hover:text-neutral-700 dark:hover:text-neutral-300 dark:text-neutral-300"
           >
             <X className="h-4 w-4" strokeWidth={1.75} />
           </button>
@@ -117,18 +117,18 @@ export function SearchClient({ articles }: { articles: SearchableArticle[] }) {
       </div>
 
       {query.trim() && (
-        <p className="mb-6 text-sm text-neutral-500">
+        <p className="mb-6 text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">
           {t('resultsCount', { count: results.length, query })}
         </p>
       )}
 
       {!query.trim() ? (
-        <p className="text-sm text-neutral-400">
+        <p className="text-sm text-neutral-400 dark:text-neutral-500">
           {tHome('latest')}
         </p>
       ) : results.length === 0 ? (
-        <div className="rounded-lg border border-dashed border-neutral-200 px-6 py-12 text-center">
-          <p className="text-neutral-600">{t('noResults', { query })}</p>
+        <div className="rounded-lg border border-dashed border-neutral-200 dark:border-neutral-800 px-6 py-12 text-center">
+          <p className="text-neutral-600 dark:text-neutral-400 dark:text-neutral-500">{t('noResults', { query })}</p>
         </div>
       ) : (
         <ul className="divide-y divide-neutral-100">
@@ -139,14 +139,14 @@ export function SearchClient({ articles }: { articles: SearchableArticle[] }) {
                 className="block transition"
               >
                 <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="font-serif text-lg text-neutral-900 group-hover:text-[#0f766e]">
+                  <h3 className="font-serif text-lg text-neutral-900 dark:text-neutral-100 group-hover:text-[#0f766e] dark:group-hover:text-[#2dd4bf] dark:text-[#2dd4bf]">
                     {article.title}
                   </h3>
-                  <time className="flex-none text-xs text-neutral-400">
+                  <time className="flex-none text-xs text-neutral-400 dark:text-neutral-500">
                     {formatDate(article.date, locale)}
                   </time>
                 </div>
-                <p className="mt-1 line-clamp-2 text-sm text-neutral-600">
+                <p className="mt-1 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400 dark:text-neutral-500">
                   {article.excerpt}
                 </p>
                 {article.tags.length > 0 && (
@@ -154,7 +154,7 @@ export function SearchClient({ articles }: { articles: SearchableArticle[] }) {
                     {article.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-500"
+                        className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-2 py-0.5 text-xs text-neutral-500 dark:text-neutral-400 dark:text-neutral-500"
                       >
                         {tag}
                       </span>

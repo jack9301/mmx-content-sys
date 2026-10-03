@@ -5,11 +5,11 @@ export function ArticleFooter({ article }: { article: Article }) {
   const t = useTranslations('article');
   if (!article.tags?.length) return null;
   return (
-    <footer className="mx-auto mt-16 max-w-2xl border-t border-neutral-200 pt-8">
+    <footer className="mx-auto mt-16 max-w-2xl border-t border-neutral-200 dark:border-neutral-800 pt-8">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-sm text-neutral-500">{t('tags')}:</span>
+        <span className="text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">{t('tags')}:</span>
         {article.tags.map((tag) => (
-          <span key={tag} className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-neutral-700">
+          <span key={tag} className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-3 py-1 text-xs text-neutral-700 dark:text-neutral-300">
             #{tag}
           </span>
         ))}

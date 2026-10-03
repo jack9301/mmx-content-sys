@@ -22,22 +22,22 @@ export async function LegalPage({
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
       <header className="mb-12">
-        <h1 className="font-serif text-4xl font-medium tracking-tight text-neutral-900">
+        <h1 className="font-serif text-4xl font-medium tracking-tight text-neutral-900 dark:text-neutral-100">
           {t('title')}
         </h1>
-        <p className="mt-3 text-sm text-neutral-500">
+        <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">
           {t('lastUpdated')}: {date}
         </p>
       </header>
 
-      <p className="mb-10 text-lg leading-relaxed text-neutral-700">
+      <p className="mb-10 text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
         {t('intro')}
       </p>
 
-      <div className="space-y-10 text-neutral-700">
+      <div className="space-y-10 text-neutral-700 dark:text-neutral-300">
         {sections.map((section) => (
           <section key={section.key}>
-            <h2 className="mb-3 font-serif text-2xl text-neutral-900">
+            <h2 className="mb-3 font-serif text-2xl text-neutral-900 dark:text-neutral-100">
               {t(section.key as any) || section.fallback}
             </h2>
             <p className="leading-relaxed">{t(section.body as any) || section.body}</p>

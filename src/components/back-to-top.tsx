@@ -26,8 +26,8 @@ export function BackToTop() {
       onClick={handleClick}
       className={
         'fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full ' +
-        'border border-neutral-200/80 bg-white/90 text-neutral-700 shadow-sm backdrop-blur ' +
-        'transition-all duration-200 hover:border-neutral-300 hover:text-neutral-900 hover:shadow-md ' +
+        'border border-neutral-200 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/90 text-neutral-700 dark:text-neutral-300 shadow-sm backdrop-blur ' +
+        'transition-all duration-200 hover:border-neutral-300 dark:border-neutral-700 hover:text-neutral-900 dark:hover:text-neutral-100 dark:text-neutral-100 hover:shadow-md ' +
         'focus:outline-none focus:ring-2 focus:ring-[#0f766e]/30 ' +
         (visible
           ? 'opacity-100 translate-y-0 pointer-events-auto'

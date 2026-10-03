@@ -19,7 +19,7 @@ const ThemeContext = createContext<{
  * (or prefers-color-scheme) and applies the `dark` class to <html>.
  * This prevents a flash of the wrong theme on first paint (FOUC).
  */
-const themeInitScript = `
+export const themeInitScript = `
 (function() {
   try {
     var stored = localStorage.getItem('agubi-theme');
@@ -61,10 +61,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeContext.Provider value={{ theme, toggle, setTheme: applyTheme }}>
-      <script
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: themeInitScript }}
-      />
       {children}
     </ThemeContext.Provider>
   );
