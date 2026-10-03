@@ -44,7 +44,7 @@ export function AdSlot({
         data-ad-slot="placeholder"
         aria-label={t('placeholder')}
         className={cn(
-          'my-8 flex w-full items-center justify-center rounded-md border border-dashed border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/60/50 text-xs uppercase tracking-wider text-neutral-400 dark:text-neutral-500',
+          'my-8 flex w-full items-center justify-center rounded-md border border-dashed border-neutral-200 bg-neutral-50 text-xs uppercase tracking-wider text-neutral-400',
           sizeClass,
           className,
         )}

@@ -16,23 +16,23 @@ export default async function ArticlesIndexPage({
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
       <header className="mb-12 max-w-2xl">
-        <h1 className="font-serif text-5xl font-medium tracking-tight text-neutral-900 dark:text-neutral-100">
+        <h1 className="font-serif text-5xl font-medium tracking-tight text-neutral-900">
           {tNav('articles')}
         </h1>
-        <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 dark:text-neutral-500">
+        <p className="mt-4 text-lg text-neutral-600">
           {t('latest')}
         </p>
       </header>
 
       {articles.length === 0 ? (
-        <p className="text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">{t('noArticles')}</p>
+        <p className="text-neutral-500">{t('noArticles')}</p>
       ) : (
         <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2">
           {articles.map((article) => (
             <article key={article.slug} className="group">
               <Link href={`/articles/${article.slug}` as any} className="block">
                 {article.coverImage && (
-                  <div className="aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800">
+                  <div className="aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100">
                     <img
                       src={article.coverImage}
                       alt={article.title}
@@ -41,20 +41,20 @@ export default async function ArticlesIndexPage({
                   </div>
                 )}
                 <div className="mt-4">
-                  <time className="text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">
+                  <time className="text-sm text-neutral-500">
                     {new Date(article.date).toLocaleDateString(locale, {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
                     })}
                   </time>
-                  <h3 className="mt-2 font-serif text-xl text-neutral-900 dark:text-neutral-100 group-hover:text-accent">
+                  <h3 className="mt-2 font-serif text-xl text-neutral-900 group-hover:text-accent">
                     {article.title}
                   </h3>
-                  <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 dark:text-neutral-500 line-clamp-2">
+                  <p className="mt-2 text-sm text-neutral-600 line-clamp-2">
                     {article.excerpt}
                   </p>
-                  <p className="mt-2 text-xs text-neutral-400 dark:text-neutral-500">
+                  <p className="mt-2 text-xs text-neutral-400">
                     {article.readingTime} {t('minRead')}
                   </p>
                 </div>

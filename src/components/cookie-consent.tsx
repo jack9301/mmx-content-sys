@@ -47,25 +47,25 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label={t('title')}
-      className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/95 p-4 shadow-lg backdrop-blur sm:bottom-4 sm:p-5"
+      className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-lg border border-neutral-200 bg-white p-4 shadow-lg backdrop-blur sm:bottom-4 sm:p-5"
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-        <div className="flex-1 text-sm text-neutral-700 dark:text-neutral-300">
-          <p className="font-medium text-neutral-900 dark:text-neutral-100">{t('title')}</p>
+        <div className="flex-1 text-sm text-neutral-700">
+          <p className="font-medium text-neutral-900">{t('title')}</p>
           <p className="mt-1 leading-relaxed">{t('body')}</p>
         </div>
         <div className="flex flex-wrap items-center gap-2 sm:flex-nowrap sm:gap-2">
           <button
             type="button"
             onClick={() => setConsent('rejected')}
-            className="rounded-md border border-neutral-200 dark:border-neutral-800 px-3 py-1.5 text-sm text-neutral-700 dark:text-neutral-300 transition hover:bg-neutral-50 dark:hover:bg-neutral-800/40 dark:bg-neutral-800/60"
+            className="rounded-md border border-neutral-200 px-3 py-1.5 text-sm text-neutral-700 transition hover:bg-neutral-50:bg-neutral-800/40"
           >
             {t('reject')}
           </button>
           <button
             type="button"
             onClick={() => setConsent('accepted')}
-            className="rounded-md bg-[#0f766e] dark:bg-[#2dd4bf] px-3 py-1.5 text-sm font-medium text-white transition hover:bg-[#0d6960] dark:bg-[#14b8a6]"
+            className="rounded-md bg-[#0f766e] px-3 py-1.5 text-sm font-medium text-white transition hover:bg-[#0d6960]"
           >
             {t('accept')}
           </button>
@@ -73,7 +73,7 @@ export function CookieConsent() {
             type="button"
             onClick={() => setShow(false)}
             aria-label="Dismiss"
-            className="rounded-md p-1.5 text-neutral-400 transition hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:bg-neutral-800 hover:text-neutral-700 dark:hover:text-neutral-300 dark:text-neutral-300"
+            className="rounded-md p-1.5 text-neutral-400 transition hover:bg-neutral-100:bg-neutral-800 hover:text-neutral-700:text-neutral-300"
           >
             <X className="h-4 w-4" strokeWidth={1.75} />
           </button>

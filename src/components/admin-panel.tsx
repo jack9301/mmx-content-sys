@@ -102,7 +102,7 @@ export function AdminPanel() {
     <div className="mx-auto max-w-4xl px-6 py-10">
       <header className="mb-8">
         <h1 className="font-serif text-3xl">Comment Moderation</h1>
-        <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 dark:text-neutral-500">
+        <p className="mt-2 text-sm text-neutral-600">
           {apiAvailable
             ? 'Connected to API. Approve/reject to publish or hide comments.'
             : 'Static host mode: changes save to localStorage. Deploy with serverless API for production.'}
@@ -130,7 +130,7 @@ export function AdminPanel() {
         </div>
       )}
 
-      <nav className="mb-6 flex gap-2 border-b border-neutral-200 dark:border-neutral-800">
+      <nav className="mb-6 flex gap-2 border-b border-neutral-200">
         {(['pending', 'approved', 'rejected', 'all'] as Filter[]).map((f) => (
           <button
             key={f}
@@ -138,7 +138,7 @@ export function AdminPanel() {
             className={`px-4 py-2 text-sm capitalize ${
               filter === f
                 ? 'border-b-2 border-accent font-medium text-accent'
-                : 'text-neutral-600 hover:text-neutral-900 dark:hover:text-neutral-100 dark:text-neutral-100'
+                : 'text-neutral-600 hover:text-neutral-900:text-neutral-100'
             }`}
           >
             {f} ({counts[f]})
@@ -147,19 +147,19 @@ export function AdminPanel() {
       </nav>
 
       {loading ? (
-        <p className="text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">Loading…</p>
+        <p className="text-sm text-neutral-500">Loading…</p>
       ) : filtered.length === 0 ? (
-        <p className="text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">No comments match this filter.</p>
+        <p className="text-sm text-neutral-500">No comments match this filter.</p>
       ) : (
         <ul className="space-y-4">
           {filtered.map((c) => (
-            <li key={c.id} className="rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-4">
+            <li key={c.id} className="rounded-lg border border-neutral-200 bg-white p-4">
               <div className="mb-2 flex flex-wrap items-center gap-2 text-sm">
                 <span className="font-medium">{c.author}</span>
-                <span className="text-neutral-400 dark:text-neutral-500">·</span>
-                <span className="text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">{c.url}</span>
-                <span className="text-neutral-400 dark:text-neutral-500">·</span>
-                <time className="text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">{new Date(c.createdAt).toLocaleString()}</time>
+                <span className="text-neutral-400">·</span>
+                <span className="text-neutral-500">{c.url}</span>
+                <span className="text-neutral-400">·</span>
+                <time className="text-neutral-500">{new Date(c.createdAt).toLocaleString()}</time>
                 <span
                   className={`ml-auto rounded-full px-2 py-0.5 text-xs ${
                     c.status === 'pending'
@@ -172,7 +172,7 @@ export function AdminPanel() {
                   {c.status}
                 </span>
               </div>
-              <p className="mb-3 whitespace-pre-wrap text-sm text-neutral-700 dark:text-neutral-300">{c.content}</p>
+              <p className="mb-3 whitespace-pre-wrap text-sm text-neutral-700">{c.content}</p>
               <div className="flex flex-wrap gap-2 text-xs">
                 {c.status !== 'approved' && (
                   <button
@@ -193,7 +193,7 @@ export function AdminPanel() {
                 {c.status !== 'pending' && (
                   <button
                     onClick={() => setStatus(c, 'pending')}
-                    className="rounded border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800/40 dark:bg-neutral-800/60"
+                    className="rounded border border-neutral-300 px-3 py-1 text-neutral-700 hover:bg-neutral-50:bg-neutral-800/40"
                   >
                     Mark pending
                   </button>

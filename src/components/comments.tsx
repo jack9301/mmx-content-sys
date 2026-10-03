@@ -61,31 +61,31 @@ export function Comments({ slug, locale }: Props) {
   }
 
   return (
-    <section className="mx-auto mt-16 max-w-2xl border-t border-neutral-200 dark:border-neutral-800 pt-12">
-      <h2 className="mb-2 font-serif text-2xl text-neutral-900 dark:text-neutral-100">{t('comments')}</h2>
-      <p className="mb-6 text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">{t('commentNote')}</p>
+    <section className="mx-auto mt-16 max-w-2xl border-t border-neutral-200 pt-12">
+      <h2 className="mb-2 font-serif text-2xl text-neutral-900">{t('comments')}</h2>
+      <p className="mb-6 text-sm text-neutral-500">{t('commentNote')}</p>
 
-      <form onSubmit={submit} className="mb-10 space-y-3 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-5">
+      <form onSubmit={submit} className="mb-10 space-y-3 rounded-lg border border-neutral-200 bg-white p-5">
         <div>
-          <label className="mb-1 block text-sm font-medium text-neutral-700 dark:text-neutral-300">{t('name')}</label>
+          <label className="mb-1 block text-sm font-medium text-neutral-700">{t('name')}</label>
           <input
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             maxLength={60}
             required
-            className="w-full rounded border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-sm focus:border-accent focus:outline-none"
+            className="w-full rounded border border-neutral-300 px-3 py-2 text-sm focus:border-accent focus:outline-none"
             placeholder={t('namePlaceholder')}
           />
         </div>
         <div>
-          <label className="mb-1 block text-sm font-medium text-neutral-700 dark:text-neutral-300">{t('yourComment')}</label>
+          <label className="mb-1 block text-sm font-medium text-neutral-700">{t('yourComment')}</label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
             maxLength={2000}
             required
             rows={4}
-            className="w-full rounded border border-neutral-300 dark:border-neutral-700 px-3 py-2 text-sm focus:border-accent focus:outline-none"
+            className="w-full rounded border border-neutral-300 px-3 py-2 text-sm focus:border-accent focus:outline-none"
             placeholder={t('commentPlaceholder')}
           />
         </div>
@@ -105,21 +105,21 @@ export function Comments({ slug, locale }: Props) {
 
       <div>
         {loading ? (
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">Loading…</p>
+          <p className="text-sm text-neutral-500">Loading…</p>
         ) : comments.length === 0 ? (
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">{t('noComments')}</p>
+          <p className="text-sm text-neutral-500">{t('noComments')}</p>
         ) : (
           <ul className="space-y-4">
             {comments.map((c) => (
-              <li key={c.id} className="rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-4">
+              <li key={c.id} className="rounded-lg border border-neutral-200 bg-white p-4">
                 <div className="mb-1 flex items-center gap-2 text-sm">
-                  <span className="font-medium text-neutral-900 dark:text-neutral-100">{c.author}</span>
-                  <span className="text-neutral-400 dark:text-neutral-500">·</span>
-                  <time className="text-neutral-500 dark:text-neutral-400 dark:text-neutral-500">
+                  <span className="font-medium text-neutral-900">{c.author}</span>
+                  <span className="text-neutral-400">·</span>
+                  <time className="text-neutral-500">
                     {new Date(c.createdAt).toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' })}
                   </time>
                 </div>
-                <p className="whitespace-pre-wrap text-sm text-neutral-700 dark:text-neutral-300">{c.content}</p>
+                <p className="whitespace-pre-wrap text-sm text-neutral-700">{c.content}</p>
               </li>
             ))}
           </ul>
