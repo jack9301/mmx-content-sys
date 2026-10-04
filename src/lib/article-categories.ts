@@ -18,6 +18,10 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   // Symptoms
   'prostate-symptoms-explained': 'symptoms',
 
+  // Causes & Risk
+  'prostate-cancer-risk-factors': 'causes-risk',
+  'prostatitis-risk-factors': 'causes-risk',
+
   // Conditions (what it is)
   'prostatitis-types-explained': 'conditions',
   'bph-explained': 'conditions',
