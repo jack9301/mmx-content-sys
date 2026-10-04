@@ -78,9 +78,21 @@
   },
   "about": {
     "title": "About",
-    "intro": "A quiet place for writing, image, and observation.",
-    "body": "Quiet Pages is a multilingual reading room. The articles are slow reads, written for people who still like to sit with an idea for more than a minute. New pieces appear every few weeks, in English, Chinese, and Japanese.",
+    "intro": "Evidence-based care for prostate health.",
+    "subtitle": "About Agubi Men's Health",
+    "lead": "Agubi Men's Health is an evidence-based resource for men navigating prostate conditions — symptoms, diagnosis, treatment, and recovery. The site exists because the internet is full of either cold clinical jargon or vague wellness marketing, and very little in between.",
+    "whatWeCover": "What the site covers",
+    "whatWeCoverBody": "Articles are organized around the conditions men actually encounter: prostatitis (including the four NIH categories), benign prostatic hyperplasia (BPH), prostate cancer, prostate stones, and prostate cysts. Alongside the conditions themselves, there is a dedicated section on symptoms — what each symptom pattern tends to mean and how to describe it clearly to a clinician — and a treatment and recovery section for daily habits, medications, procedures, and lifestyle changes that are supported by current evidence.",
+    "whoItsFor": "Who it is for",
+    "whoItsForBody": "Men who have just been diagnosed and want a calm second opinion. Men with chronic symptoms who want to understand what is actually happening. Partners and family members trying to support someone through a urology workup. Clinicians looking for a clear reference to share with patients.",
+    "howItsWritten": "How the articles are written",
+    "howItsWrittenBody": "Every article is grounded in current medical literature — guidelines from the American Urological Association and the European Association of Urology, peer-reviewed reviews, validated symptom scores such as the NIH-CPSI and IPSS, and patient-facing material from sources like the Mayo Clinic, Cleveland Clinic, and Prostate Cancer UK. Sources are listed at the end of each piece.",
+    "whatThisIsNot": "What this site is not",
+    "whatThisIsNotBody": "Agubi Men's Health is not a substitute for medical advice, and nothing on the site should be used to diagnose or treat a condition. It is a starting point — a way to walk into a urology appointment more informed, not a way to skip one.",
+    "languages": "Languages",
+    "languagesBody": "Articles are written in English, with translations into Simplified Chinese and Japanese. Coverage may vary slightly between languages as new articles are added.",
     "contact": "Get in touch",
+    "contactIntro": "Questions, corrections, or topic suggestions are welcome.",
     "contactEmail": "hello@example.com"
   },
   "privacy": {
