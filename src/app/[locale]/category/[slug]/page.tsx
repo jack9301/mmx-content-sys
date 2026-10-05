@@ -1,9 +1,23 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getAllArticles } from '@/lib/articles';
 import { articleCategoryMap, type ArticleCategory } from '@/lib/article-categories';
 import { menu } from '@/lib/menu';
+import {
+  SITE_NAME,
+  SITE_URL,
+  KEYWORDS_BASE,
+  alternatesFor,
+  localePath,
+  type SupportedLocale,
+  LOCALE_OG,
+} from '@/lib/seo';
+import { JsonLd } from '@/components/json-ld';
+import { breadcrumbJsonLd } from '@/lib/json-ld';
+
+const SUPPORTED = ['en', 'zh', 'ja'] as const;
 
 export async function generateStaticParams() {
   const slugs = new Set<string>();
@@ -12,7 +26,40 @@ export async function generateStaticParams() {
       if (item.kind === 'category') slugs.add(item.slug);
     }
   }
-  return Array.from(slugs).map((slug) => ({ slug }));
+  return Array.from(slugs).flatMap((slug) =>
+    SUPPORTED.map((locale) => ({ slug, locale }))
+  );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const safeLocale = (SUPPORTED as readonly string[]).includes(locale)
+    ? (locale as SupportedLocale)
+    : 'en';
+  const catPath = `/category/${slug}`;
+  const path = localePath(safeLocale, catPath);
+  return {
+    title: slug,
+    description: `Articles in the ${slug} category on ${SITE_NAME}.`,
+    keywords: [...KEYWORDS_BASE, slug],
+    alternates: {
+      canonical: path,
+      languages: alternatesFor(catPath, safeLocale),
+    },
+    openGraph: {
+      type: 'website',
+      locale: LOCALE_OG[safeLocale],
+      url: path,
+      siteName: SITE_NAME,
+      title: `${slug} · ${SITE_NAME}`,
+      description: `Articles in the ${slug} category.`,
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 export default async function CategoryPage({
@@ -49,8 +96,15 @@ export default async function CategoryPage({
     .map((s) => getAllArticles(locale).find((a) => a.slug === s))
     .filter((a): a is NonNullable<typeof a> => a !== undefined);
 
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: 'Home', url: `${SITE_URL}${localePath(locale as SupportedLocale, '/')}` },
+    { name: 'Articles', url: `${SITE_URL}${localePath(locale as SupportedLocale, '/articles')}` },
+    { name: slug, url: `${SITE_URL}${localePath(locale as SupportedLocale, `/category/${slug}`)}` },
+  ]);
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
+      <JsonLd data={breadcrumbs} />
       <header className="mb-12 max-w-2xl">
         <p className="mb-2 text-sm uppercase tracking-wider text-neutral-500">
           {tCat('title')}
@@ -89,7 +143,7 @@ export default async function CategoryPage({
                       day: 'numeric',
                     })}
                   </time>
-                  <h3 className="mt-2 font-serif text-xl text-neutral-900 group-hover:text-[#0f766e]:text-[#2dd4bf]">
+                  <h3 className="mt-2 font-serif text-xl text-neutral-900 transition-colors group-hover:text-[#0f766e]">
                     {article.title}
                   </h3>
                   <p className="mt-2 text-sm text-neutral-600 line-clamp-2">

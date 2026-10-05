@@ -1,21 +1,27 @@
 import type { Metadata } from 'next';
 import { Inter, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_TAGLINE,
+  OG_IMAGE_URL,
+  KEYWORDS_BASE,
+  OG_IMAGE_SPEC,
+} from '@/lib/seo';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const serif = Source_Serif_4({ subsets: ['latin'], variable: '--font-serif' });
 
-const SITE_URL = 'https://mmx-content-sys02.pages.dev';
-const OG_IMAGE = `${SITE_URL}/og-image.png`;
-const LOGO = `${SITE_URL}/favicon.png`;
-
 export const metadata: Metadata = {
-  title: { default: "Agubi Men's Health", template: "%s · Agubi Men's Health" },
-  description: 'Evidence-based articles about prostate conditions, treatment, and recovery.',
-  keywords: ['prostate health', "men's health", 'prostatitis', 'BPH', 'prostate cancer', 'urology'],
-  authors: [{ name: "Agubi Men's Health" }],
-  creator: "Agubi Men's Health",
   metadataBase: new URL(SITE_URL),
+  title: { default: SITE_NAME, template: `%s · ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
+  keywords: [...KEYWORDS_BASE],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
 
   icons: {
     icon: [
@@ -23,57 +29,55 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
     shortcut: '/favicon.png',
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
-    siteName: "Agubi Men's Health",
-    title: "Agubi Men's Health",
-    description: 'Evidence-based care for prostate health.',
-    images: [
-      {
-        url: OG_IMAGE,
-        width: 1376,
-        height: 768,
-        alt: "Agubi Men's Health — evidence-based care for prostate health",
-      },
-    ],
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_TAGLINE,
+    images: [OG_IMAGE_SPEC],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: "Agubi Men's Health",
-    description: 'Evidence-based care for prostate health.',
-    images: [OG_IMAGE],
+    title: SITE_NAME,
+    description: SITE_TAGLINE,
+    images: [OG_IMAGE_URL],
   },
 
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      en: `${SITE_URL}/en/`,
+      zh: `${SITE_URL}/zh/`,
+      ja: `${SITE_URL}/ja/`,
+      'x-default': `${SITE_URL}/en/`,
+    },
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
+
+  category: 'health',
+  classification: 'Health & Medical',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${serif.variable}`}>
-      <head>
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta property="og:image" content={OG_IMAGE} />
-        <meta property="og:image:width" content="1376" />
-        <meta property="og:image:height" content="768" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={OG_IMAGE} />
-      </head>
       <body className="min-h-screen bg-[#fdfdfc] text-neutral-900 antialiased">
         {children}
       </body>

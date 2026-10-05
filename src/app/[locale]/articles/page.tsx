@@ -1,6 +1,48 @@
+import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getAllArticles } from '@/lib/articles';
+import {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  KEYWORDS_BASE,
+  alternatesFor,
+  localePath,
+  type SupportedLocale,
+  LOCALE_OG,
+} from '@/lib/seo';
+
+const SUPPORTED = ['en', 'zh', 'ja'] as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const safeLocale = (SUPPORTED as readonly string[]).includes(locale)
+    ? (locale as SupportedLocale)
+    : 'en';
+  const title = 'Articles';
+  const path = localePath(safeLocale, '/articles');
+  return {
+    title,
+    description: `Browse all evidence-based articles from ${SITE_NAME} on prostate conditions, symptoms, treatment, and recovery.`,
+    keywords: [...KEYWORDS_BASE],
+    alternates: {
+      canonical: path,
+      languages: alternatesFor('/articles', safeLocale),
+    },
+    openGraph: {
+      type: 'website',
+      locale: LOCALE_OG[safeLocale],
+      url: path,
+      siteName: SITE_NAME,
+      title: `${title} · ${SITE_NAME}`,
+      description: SITE_DESCRIPTION,
+    },
+  };
+}
 
 export default async function ArticlesIndexPage({
   params,

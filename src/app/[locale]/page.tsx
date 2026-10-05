@@ -1,7 +1,56 @@
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getAllArticles } from '@/lib/articles';
+import {
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_DESCRIPTION,
+  KEYWORDS_BASE,
+  alternatesFor,
+  localePath,
+  type SupportedLocale,
+  LOCALE_OG,
+} from '@/lib/seo';
+import { JsonLd } from '@/components/json-ld';
+import { organizationJsonLd, websiteJsonLd } from '@/lib/json-ld';
+
+const SUPPORTED = ['en', 'zh', 'ja'] as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const safeLocale = (SUPPORTED as readonly string[]).includes(locale)
+    ? (locale as SupportedLocale)
+    : 'en';
+  const path = localePath(safeLocale, '/');
+  return {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    keywords: [...KEYWORDS_BASE],
+    alternates: {
+      canonical: path,
+      languages: alternatesFor('/', safeLocale),
+    },
+    openGraph: {
+      type: 'website',
+      locale: LOCALE_OG[safeLocale],
+      url: path,
+      siteName: SITE_NAME,
+      title: SITE_NAME,
+      description: SITE_TAGLINE,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: SITE_NAME,
+      description: SITE_TAGLINE,
+    },
+  };
+}
 
 export default async function HomePage({
   params,
@@ -16,6 +65,8 @@ export default async function HomePage({
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
+      <JsonLd data={organizationJsonLd()} />
+      <JsonLd data={websiteJsonLd()} />
       <header className="mb-16 max-w-2xl">
         <h1 className="font-serif text-5xl font-medium tracking-tight text-neutral-900">
           {tSite('title')}
