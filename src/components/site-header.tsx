@@ -5,6 +5,7 @@ import { Link, usePathname } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { Search as SearchIcon, Menu as MenuIcon, X as XIcon, ChevronDown } from 'lucide-react';
 import { LanguageSwitcher } from './language-switcher';
+import { MobileDrawer } from './mobile-drawer';
 import { menu, type MenuSection } from '@/lib/menu';
 import { cn } from '@/lib/utils';
 
@@ -110,7 +111,7 @@ export function SiteHeader({ locale }: { locale: string }) {
         </button>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer (rendered into <body> via portal to escape sticky/filter context) */}
       {mobileOpen && (
         <MobileDrawer
           onClose={() => setMobileOpen(false)}
@@ -118,7 +119,6 @@ export function SiteHeader({ locale }: { locale: string }) {
           onToggleSection={(slug) =>
             setExpandedSection(expandedSection === slug ? null : slug)
           }
-          pathname={pathname}
         />
       )}
     </header>
@@ -216,112 +216,3 @@ function MenuDropdown({
   );
 }
 
-function MobileDrawer({
-  onClose,
-  expandedSection,
-  onToggleSection,
-  pathname,
-}: {
-  onClose: () => void;
-  expandedSection: string | null;
-  onToggleSection: (slug: string) => void;
-  pathname: string;
-}) {
-  const tNav = useTranslations('nav');
-  const tCat = useTranslations('category');
-
-  return (
-    <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true">
-      <div
-        className="absolute inset-0 bg-neutral-900/40 backdrop-blur-sm"
-        onClick={onClose}
-      />
-      <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] overflow-y-auto bg-white shadow-2xl">
-        <div className="flex items-center justify-between border-b border-neutral-200 px-5 py-4">
-          <span className="font-serif text-lg">{tCat('menu')}</span>
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={onClose}
-            className="flex h-9 w-9 items-center justify-center rounded text-neutral-700 transition hover:bg-neutral-100:bg-neutral-800"
-          >
-            <XIcon className="h-5 w-5" strokeWidth={1.75} />
-          </button>
-        </div>
-
-        <nav className="px-3 py-3">
-          <Link
-            href="/"
-            className="block rounded px-3 py-2.5 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50:bg-neutral-800/40"
-          >
-            {tNav('home')}
-          </Link>
-
-          {menu.sections.map((section) => (
-            <div key={section.slug} className="mt-1">
-              <button
-                type="button"
-                onClick={() => onToggleSection(section.slug)}
-                aria-expanded={expandedSection === section.slug}
-                className="flex w-full items-center justify-between rounded px-3 py-2.5 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50:bg-neutral-800/40"
-              >
-                {tNav(`sections.${section.slug}` as any)}
-                <ChevronDown
-                  className={cn(
-                    'h-4 w-4 transition-transform',
-                    expandedSection === section.slug && 'rotate-180',
-                  )}
-                  strokeWidth={1.75}
-                />
-              </button>
-              {expandedSection === section.slug && (
-                <div className="mt-1 ml-3 space-y-0.5 border-l border-neutral-200 pl-3">
-                  {section.items.map((item) => {
-                    if (item.kind === 'category') {
-                      const href = `/category/${item.slug}` as any;
-                      return (
-                        <Link
-                          key={item.slug}
-                          href={href}
-                          className="block rounded px-3 py-2 text-sm text-neutral-600 transition hover:bg-neutral-50:bg-neutral-800/40"
-                        >
-                          {tNav(`categories.${item.labelKey}` as any)}
-                        </Link>
-                      );
-                    }
-                    if (item.kind === 'link') {
-                      return (
-                        <Link
-                          key={item.href}
-                          href={item.href as any}
-                          className="block rounded px-3 py-2 text-sm text-neutral-600 transition hover:bg-neutral-50:bg-neutral-800/40"
-                        >
-                          {item.label}
-                        </Link>
-                      );
-                    }
-                    return null;
-                  })}
-                </div>
-              )}
-            </div>
-          ))}
-
-          <Link
-            href="/articles"
-            className="mt-1 block rounded px-3 py-2.5 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50:bg-neutral-800/40"
-          >
-            {tNav('articles')}
-          </Link>
-          <Link
-            href="/search"
-            className="flex items-center gap-2 rounded px-3 py-2.5 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50:bg-neutral-800/40"
-          >
-            <SearchIcon className="h-4 w-4" strokeWidth={1.75} />
-            {tNav('search')}
-          </Link>
-        </nav>
-      </div>
-    </div>
-  );
-}
