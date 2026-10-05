@@ -1,9 +1,4 @@
 {
-  "site": {
-    "title": "Agubi Men's Health",
-    "tagline": "面向前列腺健康的循证护理。",
-    "description": "关于前列腺疾病、治疗与康复的循证文章。"
-  },
   "nav": {
     "home": "首页",
     "articles": "文章",
@@ -31,6 +26,11 @@
       "slowLivingDesc": "关于专注、观察与更慢生活节奏的随笔。"
     }
   },
+  "site": {
+    "title": "Agubi Men's Health",
+    "tagline": "面向前列腺健康的循证护理。",
+    "description": "关于前列腺疾病、治疗与康复的循证文章。"
+  },
   "home": {
     "latest": "最新文章",
     "readMore": "阅读全文",
@@ -38,32 +38,37 @@
     "noArticles": "暂无文章。"
   },
   "article": {
-    "publishedOn": "发布于",
-    "by": "作者",
     "minRead": "分钟阅读",
-    "tags": "标签",
+    "backToList": "返回所有文章",
     "comments": "评论",
+    "commentsCount": "{count, plural, =0 {暂无评论} other {# 条评论}}",
+    "commentsPolicy": "评论需要审核。在管理员通过之前不会公开显示。",
     "leaveComment": "发表评论",
-    "commentNote": "所有评论在公开显示前都会经过审核。",
-    "backToAll": "← 返回所有文章",
-    "next": "下一篇",
-    "previous": "上一篇",
-    "name": "你的名字",
-    "namePlaceholder": "张三",
-    "yourComment": "你的评论",
-    "commentPlaceholder": "分享你的想法…",
+    "name": "姓名",
+    "namePlaceholder": "您的称呼",
+    "comment": "评论",
+    "commentPlaceholder": "说说您的看法……",
     "submit": "提交评论",
-    "submitting": "正在提交…",
-    "noComments": "还没有评论。来做第一个吧。"
+    "submitting": "提交中……",
+    "submitted": "感谢您的评论，正在等待审核。",
+    "error": "提交失败，请稍后重试。",
+    "rateLimited": "提交过于频繁，请稍候一分钟。",
+    "blocked": "您的评论被垃圾内容过滤器拦截。",
+    "approved": "已通过",
+    "pending": "待审核",
+    "reject": "拒绝",
+    "approve": "通过",
+    "delete": "删除",
+    "adminLogin": "管理员登录",
+    "adminToken": "管理员令牌",
+    "adminLoginButton": "登录",
+    "adminLogout": "退出登录",
+    "adminEmpty": "暂无待审核评论。",
+    "confirmDelete": "确定删除该评论吗？此操作不可撤销。"
   },
   "footer": {
-    "copyright": "© {year} {name}. 保留所有权利。",
-    "builtWith": "使用 Next.js 构建，部署于 Cloudflare Pages。",
-    "legal": "法律",
-    "privacy": "隐私",
-    "cookies": "Cookie",
-    "disclosure": "披露",
-    "about": "关于"
+    "copyright": "保留所有权利。",
+    "builtWith": "用心为男性健康而建。"
   },
   "category": {
     "title": "分类",
@@ -72,9 +77,9 @@
     "menu": "菜单"
   },
   "search": {
-    "placeholder": "搜索文章...",
+    "placeholder": "搜索文章……",
     "noResults": "没有找到 \"{query}\" 的结果",
-    "resultsCount": "{count, plural, =0 {没有结果} other {# 条结果}} 匹配 \"{query}\""
+    "resultsCount": "{count, plural, =0 {没有找到结果} other {找到 # 条 \"{query}\" 的结果}}"
   },
   "about": {
     "title": "关于",
@@ -98,63 +103,57 @@
   "privacy": {
     "title": "隐私政策",
     "lastUpdated": "最后更新",
-    "intro": "你的隐私重要。本页说明静页收集哪些信息、如何使用，以及你拥有哪些选择。",
+    "intro": "您的隐私很重要。本页说明 Agubi Men's Health 会收集哪些信息、如何使用,以及您拥有哪些选择。简短总结:本站收集的信息非常少、不投放广告追踪器,并且您可以随时申请删除您提交过的任何内容。",
     "dataCollected": "我们收集的信息",
-    "dataCollectedBody": "静页本身不会收集超过页面展示所需的个人信息。当你访问本站时，作为托管提供方的 Cloudflare Pages 会处理标准的服务端日志（IP 地址、用户代理、时间戳）。这些日志仅用于安全与性能监控，不会被出售或分享。",
+    "dataCollectedBody": "Agubi Men's Health 本身不会收集超出页面展示所需的个人信息。当您访问本站时,我们的托管服务提供方 Cloudflare Pages 会处理标准的服务端日志(IP 地址、用户代理、时间戳)用于安全与防滥用。这些日志由 Cloudflare 按照其标准实践保留,Agubi Men's Health 不会将其用于识别或联系单个访客。",
     "comments": "评论",
-    "commentsBody": "当你留下评论时，只会保存你提交的名字和评论内容。评论会先进入审核状态，在管理员通过之前不会公开显示。评论存储在 Cloudflare KV 中，可应要求删除。",
+    "commentsBody": "如果您选择在文章下发表评论,我们只存储您提交的显示名称、评论正文、您 IP 地址的哈希值(仅用于垃圾评论限速),以及提交时间戳。评论会进入审核队列,在编辑审核通过之前不会公开显示。您可以随时通过\"关于\"页面的联系方式申请删除您发表的评论——请附上评论正文以便我们定位。",
     "cookies": "Cookie 与追踪",
-    "cookiesBody": "本站自身不设置追踪 Cookie。嵌入的第三方服务（如分析、广告网络、嵌入视频）可能会设置它们自己的 Cookie，详见 Cookie 政策。",
-    "rights": "你的权利",
-    "rightsBody": "如果你曾在本站留下评论或提供过信息，可以请求查看、修改或删除这些数据。请通过关于页上的联系方式与运营者联系。",
+    "cookiesBody": "本站自身不设置追踪 Cookie。文章中嵌入的第三方服务(例如 YouTube 视频或分析脚本)可能会在您与之交互时设置它们自己的 Cookie。详见 Cookie 政策页面。",
+    "rights": "您的权利",
+    "rightsBody": "如果您曾在本站留下评论或提供过信息,您可以申请查看、更正或删除这些数据。请使用\"关于\"页面上的联系方式。我们将在三十天内回复。",
+    "children": "儿童隐私",
+    "childrenBody": "本站面向成年读者,不以 18 岁以下儿童为受众。我们不会故意收集儿童的个人信息。如果您认为有儿童提交了评论,请联系我们,我们会将其删除。",
     "changes": "政策变更",
-    "changesBody": "如果本政策更新，页面顶部的日期会相应变更。重要变更会在下次站点更新时说明。"
+    "changesBody": "如果本政策更新,页面顶部的日期会相应变更。重要变更会在下次站点更新时说明。继续使用本站即表示您接受修订后的政策。",
+    "contactHeading": "联系方式"
   },
   "cookies": {
     "title": "Cookie 政策",
     "lastUpdated": "最后更新",
-    "intro": "本页说明什么是 Cookie、静页使用了哪些 Cookie，以及你如何控制它们。",
+    "intro": "本页说明 Cookie 是什么、Agubi Men's Health 使用哪些 Cookie,以及您如何控制它们。简短总结:本站自身只使用一个可选 Cookie 来记住您对 Cookie 横幅的确认选择。其他任何 Cookie 都来自文章中嵌入的第三方服务。",
     "what": "什么是 Cookie",
-    "whatBody": "Cookie 是浏览器为网站保存的小文本文件。它们被广泛用于让网站正常工作、记住偏好，以及向网站运营者提供信息。",
+    "whatBody": "Cookie 是网站请求您的浏览器存储的小文本文件,在后续访问时再读取。它们广泛用于记忆偏好、保持登录状态以及衡量网站使用情况。现代隐私法规要求网站透明地说明使用哪些 Cookie 以及为什么使用。",
     "use": "我们使用的 Cookie",
-    "useBody": "静页自身不为分析、广告或追踪设置 Cookie。站点以静态方式构建，浏览文章不需要任何 Cookie。",
+    "useBody": "Agubi Men's Health 自身只设置一个 Cookie:用于记住您是否已确认 Cookie 横幅的偏好 Cookie,这样它就不会在每一页重复出现。它不包含任何个人数据,三十天后过期。本站不设置任何分析、广告或跨站追踪 Cookie。",
     "thirdParty": "第三方 Cookie",
-    "thirdPartyBody": "当你打开嵌入了第三方内容的页面（例如从其他域名加载的图像、字体或视频），该第三方可能会设置自己的 Cookie。常见例子包括从 Google Fonts 加载的字体、从内容分发网络加载的图片，或分析脚本。",
+    "thirdPartyBody": "当文章嵌入了其他服务的内容——例如 YouTube 视频、Vimeo 片段或推文——这些服务在您加载或与嵌入内容交互时可能会设置它们自己的 Cookie。Agubi Men's Health 无法控制这些 Cookie,它们的使用受相应服务隐私政策的约束。",
     "control": "如何控制 Cookie",
-    "controlBody": "大多数浏览器允许你在设置中屏蔽或删除 Cookie。这些选项通常在「隐私」「历史记录」或「站点数据」中。屏蔽所有 Cookie 可能会影响部分站点的功能，但静页本身仍可正常使用。",
-    "more": "更多信息",
-    "moreBody": "如果你对本站的 Cookie 有具体问题，请通过关于页联系运营者。"
+    "controlBody": "大多数浏览器允许您通过设置阻止或删除 Cookie。您通常可以在\"隐私\"、\"历史记录\"或\"站点数据\"下找到这些选项。阻止所有 Cookie 可能会影响某些网站的功能;只阻止第三方 Cookie 通常是一个不错的折中方案。您也可以使用隐私或无痕模式访问本站,这样不会保留任何 Cookie。",
+    "changes": "政策变更",
+    "changesBody": "如果本站使用的 Cookie 发生变化,本页会更新,顶部的日期也会相应变更。",
+    "contactHeading": "联系方式"
   },
   "disclosure": {
-    "title": "联盟营销披露",
+    "title": "联盟披露",
     "lastUpdated": "最后更新",
-    "intro": "根据美国联邦贸易委员会及其他国家相应消费者保护规则的要求，本页说明静页如何使用联盟链接。",
+    "intro": "根据美国联邦贸易委员会的指南以及其他司法管辖区的相应消费者保护规则,本页说明 Agubi Men's Health 如何使用联盟链接,以及本站的资金来源。",
     "what": "什么是联盟链接",
-    "whatBody": "联盟链接是一种特殊 URL，可以让零售商追踪来自本站的推荐。如果你点击联盟链接并完成购买，零售商将向静页支付一笔小额佣金，对你来说不产生任何额外费用。",
-    "presence": "如何识别它们",
-    "presenceBody": "每一篇包含联盟链接的文章都会清晰标注。披露说明会出现在文章顶部以及每个链接或推荐区块附近。链接也可能以不同的样式显示（例如带有小标签），便于识别。",
-    "recommendations": "编辑独立性",
-    "recommendationsBody": "联盟关系不会影响推荐哪些产品或服务。某个产品被提及，仅仅因为它真的有用、做得好，或值得考虑。如果因商业关系导致推荐发生变化，这种变化会被披露。",
-    "programs": "合作项目",
-    "programsBody": "静页可能参与 Amazon Associates、ShareASale、Impact 等联盟营销项目。完整列表会随新项目加入而更新。",
-    "questions": "如有疑问",
-    "questionsBody": "如果你对本披露或本站特定联盟关系有任何问题，请通过关于页联系我们。"
-  },
-  "ads": {
-    "placeholder": "广告",
-    "sponsored": "赞助内容"
-  },
-  "cookieConsent": {
-    "title": "Cookie 与第三方内容",
-    "body": "本站可能使用第三方服务（如分析或嵌入媒体），它们会设置自己的 Cookie。你可以选择全部接受、拒绝非必要项，或管理偏好。",
-    "accept": "全部接受",
-    "reject": "拒绝非必要",
-    "manage": "管理偏好"
+    "whatBody": "联盟链接是一种特殊 URL,可让零售商追踪来自本站的推荐。如果您点击联盟链接并完成购买,零售商将向 Agubi Men's Health 支付小额佣金,对您而言不会产生任何额外费用。联盟链接绝不会改变您支付的价格,无论您使用我们的链接还是直接访问零售商,您都会到达同一个产品页面。",
+    "programs": "我们可能加入的联盟计划",
+    "programsBody": "Agubi Men's Health 可能会加入 Amazon Associates、ShareASale、Impact 等联盟计划。随着新合作的加入,完整列表会持续更新。如果某个链接是联盟链接,文章通常会注明。",
+    "funded": "本站的资金来源",
+    "fundedBody": "Agubi Men's Health 目前由运营者自身投入时间运营,并在适用时通过联盟佣金和小额捐赠获得支持。本站不展示广告、不出售用户数据、不为任何产品、品牌或服务的编辑报道收取费用。编辑决定独立于任何联盟关系。",
+    "medical": "医学独立性",
+    "medicalBody": "Agubi Men's Health 涵盖医学与健康话题。本站任何内容都不受任何商业关系影响。文章中提到的某个产品,是因为它与主题相关,而不是因为本站与其制造商有联盟关系。如果将来出现赞助内容,会清楚标注。",
+    "changes": "披露变更",
+    "changesBody": "如果本页披露内容更新,页面顶部的日期会相应变更。",
+    "contactHeading": "联系方式"
   },
   "notFound": {
     "title": "页面未找到",
     "headline": "我们找不到这个页面",
-    "body": "您访问的链接可能已失效，或者文章已迁移。网站内容仍然完整，请尝试下方任一路径。",
+    "body": "您访问的链接可能已失效,或者文章已迁移。网站内容仍然完整,请尝试下方任一路径。",
     "code": "错误 404",
     "home": "回到首页",
     "articles": "浏览所有文章",

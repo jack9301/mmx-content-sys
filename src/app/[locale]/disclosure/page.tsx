@@ -10,13 +10,13 @@ export default async function DisclosurePage({
     <LegalPage
       locale={locale}
       namespace="disclosure"
-      date="2026-07-16"
+      date="2026-10-05"
       sections={[
-        { key: 'what', fallback: 'What Is an Affiliate Link', body: 'whatBody' },
-        { key: 'presence', fallback: 'How You Can Identify Them', body: 'presenceBody' },
-        { key: 'recommendations', fallback: 'Editorial Independence', body: 'recommendationsBody' },
-        { key: 'programs', fallback: 'Programs', body: 'programsBody' },
-        { key: 'questions', fallback: 'Questions', body: 'questionsBody' },
+        { key: 'what', fallback: 'What Are Affiliate Links', body: 'whatBody' },
+        { key: 'programs', fallback: 'Affiliate Programs We May Join', body: 'programsBody' },
+        { key: 'funded', fallback: 'How the Site Is Funded', body: 'fundedBody' },
+        { key: 'medical', fallback: 'Medical Independence', body: 'medicalBody' },
+        { key: 'changes', fallback: 'Changes to This Disclosure', body: 'changesBody' },
       ]}
     />
   );
