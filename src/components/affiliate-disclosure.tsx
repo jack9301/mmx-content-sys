@@ -15,7 +15,7 @@ export function AffiliateDisclosure({ className }: { className?: string }) {
     >
       <Info className="mt-0.5 h-4 w-4 flex-none text-neutral-500" strokeWidth={1.75} />
       <p>
-        {t('presenceBody')}{' '}
+        {t('asideBody')}{' '}
         <Link
           href="/disclosure"
           className="font-medium text-[#0f766e] underline-offset-2 hover:underline"
