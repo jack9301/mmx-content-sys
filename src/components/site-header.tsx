@@ -45,7 +45,14 @@ export function SiteHeader({ locale }: { locale: string }) {
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200/60 bg-[#fdfdfc]/80 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
-        <Link href="/" className="font-serif text-xl font-medium tracking-tight">
+        <Link href="/" className="flex items-center gap-2 font-serif text-xl font-medium tracking-tight">
+          <img
+            src="/favicon.png"
+            alt=""
+            width={28}
+            height={28}
+            className="h-7 w-7 shrink-0"
+          />
           {tSite('title')}
         </Link>
 
