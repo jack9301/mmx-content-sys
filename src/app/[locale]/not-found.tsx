@@ -1,20 +1,16 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+'use client';
+
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import { Search as SearchIcon, Home as HomeIcon, BookOpen } from 'lucide-react';
 
-export async function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ja' }];
-}
-
-export default async function NotFound({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations('notFound');
-  const tSite = await getTranslations('site');
+/**
+ * Locale-aware 404 page (client component, no async params).
+ * Rendered when a route matches `[locale]` but no specific page exists.
+ */
+export default function NotFound() {
+  const t = useTranslations('notFound');
+  const tSite = useTranslations('site');
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
