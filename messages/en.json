@@ -150,5 +150,15 @@
     "accept": "Accept all",
     "reject": "Reject non-essential",
     "manage": "Manage preferences"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "headline": "We can't find that page",
+    "body": "The address you followed may be broken, or the article may have moved. The site is fully indexed though — try one of the paths below.",
+    "code": "Error 404",
+    "home": "Go home",
+    "articles": "Browse all articles",
+    "search": "Search the site",
+    "backToSafety": "Back to safety"
   }
 }
