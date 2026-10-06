@@ -3,7 +3,7 @@
  * Used by page-level generateMetadata functions, sitemap, robots, and JSON-LD.
  */
 
-export const SITE_URL = 'https://mmx-content-sys02.pages.dev';
+export const SITE_URL = 'https://www.agubi.com';
 export const SITE_NAME = "Agubi Men's Health";
 export const SITE_TAGLINE = 'Evidence-based care for prostate health.';
 export const SITE_DESCRIPTION =
