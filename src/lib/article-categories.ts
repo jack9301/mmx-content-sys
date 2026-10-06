@@ -35,6 +35,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
 
   // Lifestyle (daily habits, prevention)
   'understanding-prostatitis': 'lifestyle',
+  'daily-habits-prostate-health': 'lifestyle',
 
   // Slow Living (essays)
   'on-slow-looking': 'slow-living',
