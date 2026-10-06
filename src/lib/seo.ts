@@ -33,16 +33,20 @@ export const KEYWORDS_BASE = [
 ] as const;
 
 /**
- * Build a localized path: `/en/articles/foo` etc.
+ * Build a localized path: `/en/articles/foo/` etc.
+ * Always appends a trailing slash if not already present
+ * (matches `trailingSlash: true` in next.config.mjs).
  */
 export function localePath(locale: SupportedLocale, path = ''): string {
   const p = path.startsWith('/') ? path : `/${path}`;
-  return `/${locale}${p}`;
+  const full = `/${locale}${p}`;
+  return full.endsWith('/') ? full : `${full}/`;
 }
 
 /**
  * Build alternate-language links for hreflang.
- * Returns an array suitable for Next.js `alternates.languages`.
+ * Returns a record suitable for Next.js `alternates.languages`.
+ * Always includes `x-default` pointing to the canonical locale.
  */
 export function alternatesFor(
   path: string,
