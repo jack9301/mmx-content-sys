@@ -17,10 +17,12 @@ export type ArticleCategory =
 export const articleCategoryMap: Record<string, ArticleCategory> = {
   // Symptoms
   'prostate-symptoms-explained': 'symptoms',
+  'when-to-see-urologist': 'symptoms',
 
   // Causes & Risk
   'prostate-cancer-risk-factors': 'causes-risk',
   'prostatitis-risk-factors': 'causes-risk',
+  'diet-prostate-health-evidence': 'causes-risk',
 
   // Conditions (what it is)
   'prostatitis-types-explained': 'conditions',
@@ -32,6 +34,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   // Treatment (what to do)
   'chronic-prostatitis-recovery': 'treatment',
   'prostate-milking': 'treatment',
+  'prostate-massage-evidence': 'treatment',
 
   // Lifestyle (daily habits, prevention)
   'understanding-prostatitis': 'lifestyle',
