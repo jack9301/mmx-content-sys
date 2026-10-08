@@ -121,11 +121,11 @@
   "cookies": {
     "title": "Cookies Policy",
     "lastUpdated": "Last updated",
-    "intro": "This page explains what cookies are, which cookies Agubi Men's Health uses, and how you can control them. The short version: the site itself uses one optional cookie to remember your cookie-consent choice. Anything else comes from third-party services embedded in articles.",
+    "intro": "This page explains what cookies are, which (if any) Agubi Men's Health uses, and how you can control them. The short version: this site itself does not set any cookies. The site uses browser localStorage to remember your comment-author name between visits — localStorage is a different browser storage mechanism from cookies and is not transmitted with HTTP requests. The only cookies that may ever be set come from third-party services embedded in articles (for example, a YouTube video or tweet).",
     "what": "What Are Cookies",
     "whatBody": "Cookies are small text files that a website asks your browser to store, then reads back on later visits. They are widely used to remember preferences, keep you signed in, and measure site usage. Modern privacy regulations require sites to be transparent about which cookies they use and why.",
     "use": "Cookies We Use",
-    "useBody": "Agubi Men's Health itself sets one cookie: a consent-preference cookie that remembers whether you have acknowledged the cookie banner, so it does not reappear on every page. It contains no personal data and expires after thirty days. No analytics, advertising, or cross-site tracking cookies are set by this site.",
+    "useBody": "Agubi Men's Health does not set any cookies of its own. It uses browser localStorage for the comments feature (so your name is remembered between visits) — localStorage is separate from cookies and is not transmitted with HTTP requests. No analytics, advertising, or cross-site tracking cookies are set by this site. The only cookies that may ever be set come from third-party services embedded in articles (see below).",
     "thirdParty": "Third-Party Cookies",
     "thirdPartyBody": "When an article embeds content from another service — for example, a YouTube video, a Vimeo clip, or a tweet — those services may set their own cookies when you load or interact with the embed. Agubi Men's Health does not control those cookies. Their use is governed by the privacy policies of the respective services.",
     "control": "How to Control Cookies",

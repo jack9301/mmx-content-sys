@@ -121,11 +121,11 @@
   "cookies": {
     "title": "Cookie 政策",
     "lastUpdated": "最后更新",
-    "intro": "本页说明 Cookie 是什么、Agubi Men's Health 使用哪些 Cookie,以及您如何控制它们。简短总结:本站自身只使用一个可选 Cookie 来记住您对 Cookie 横幅的确认选择。其他任何 Cookie 都来自文章中嵌入的第三方服务。",
+    "intro": "本页说明 Cookie 是什么、Agubi Men's Health 是否使用 Cookie,以及您如何控制它们。简短总结:本站自身不设置任何 Cookie。评论功能使用浏览器 localStorage 记住您的称呼——localStorage 与 Cookie 是不同的存储机制,不会随 HTTP 请求一起发送。可能被设置的唯一 Cookie 来自文章中嵌入的第三方服务(例如 YouTube 视频或推文)。",
     "what": "什么是 Cookie",
     "whatBody": "Cookie 是网站请求您的浏览器存储的小文本文件,在后续访问时再读取。它们广泛用于记忆偏好、保持登录状态以及衡量网站使用情况。现代隐私法规要求网站透明地说明使用哪些 Cookie 以及为什么使用。",
     "use": "我们使用的 Cookie",
-    "useBody": "Agubi Men's Health 自身只设置一个 Cookie:用于记住您是否已确认 Cookie 横幅的偏好 Cookie,这样它就不会在每一页重复出现。它不包含任何个人数据,三十天后过期。本站不设置任何分析、广告或跨站追踪 Cookie。",
+    "useBody": "Agubi Men's Health 自身不设置任何 Cookie。评论功能使用浏览器 localStorage 记住您输入的姓名——localStorage 与 Cookie 是不同的存储机制,不会随 HTTP 请求一起发送。本站不设置任何分析、广告或跨站追踪 Cookie。可能被设置的唯一 Cookie 来自文章中嵌入的第三方服务(见下文)。",
     "thirdParty": "第三方 Cookie",
     "thirdPartyBody": "当文章嵌入了其他服务的内容——例如 YouTube 视频、Vimeo 片段或推文——这些服务在您加载或与嵌入内容交互时可能会设置它们自己的 Cookie。Agubi Men's Health 无法控制这些 Cookie,它们的使用受相应服务隐私政策的约束。",
     "control": "如何控制 Cookie",
