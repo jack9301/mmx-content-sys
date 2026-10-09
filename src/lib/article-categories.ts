@@ -35,6 +35,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'chronic-prostatitis-recovery': 'treatment',
   'prostate-milking': 'treatment',
   'prostate-massage-evidence': 'treatment',
+  'prostate-massage-safety': 'treatment',
 
   // Lifestyle (daily habits, prevention)
   'understanding-prostatitis': 'lifestyle',
