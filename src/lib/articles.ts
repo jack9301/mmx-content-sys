@@ -29,7 +29,7 @@ function readArticleFile(slug: string, locale: string): Article | null {
     excerpt: data.excerpt ?? '',
     date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
     tags: data.tags ?? [],
-    coverImage: data.coverImage,
+    coverImage: data.coverImage ?? data.cover,
     content,
     readingTime: Math.max(1, Math.round(readingTime(content).minutes)),
   };
