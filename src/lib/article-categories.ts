@@ -18,6 +18,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   // Symptoms
   'prostate-symptoms-explained': 'symptoms',
   'when-to-see-urologist': 'symptoms',
+  'prostatitis-whole-body-effects': 'symptoms',
 
   // Causes & Risk
   'prostate-cancer-risk-factors': 'causes-risk',
