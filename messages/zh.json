@@ -64,7 +64,9 @@
     "adminLoginButton": "登录",
     "adminLogout": "退出登录",
     "adminEmpty": "暂无待审核评论。",
-    "confirmDelete": "确定删除该评论吗？此操作不可撤销。"
+    "confirmDelete": "确定删除该评论吗？此操作不可撤销。",
+    "relatedTitle": "相关文章",
+    "relatedSubtitle": "继续阅读相关话题。"
   },
   "footer": {
     "copyright": "保留所有权利。",

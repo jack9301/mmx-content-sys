@@ -64,7 +64,9 @@
     "adminLoginButton": "ログイン",
     "adminLogout": "ログアウト",
     "adminEmpty": "確認待ちのコメントはありません。",
-    "confirmDelete": "このコメントを削除しますか？この操作は取り消せません。"
+    "confirmDelete": "このコメントを削除しますか？この操作は取り消せません。",
+    "relatedTitle": "関連記事",
+    "relatedSubtitle": "このトピックの続きを読む。"
   },
   "footer": {
     "copyright": "All rights reserved.",

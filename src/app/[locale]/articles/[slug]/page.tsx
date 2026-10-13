@@ -5,8 +5,11 @@ import { getAllArticleSlugs, getArticleBySlug } from '@/lib/articles';
 import { ArticleHeader } from '@/components/article-header';
 import { ArticleFooter } from '@/components/article-footer';
 import { Comments } from '@/components/comments';
+import { RelatedArticles } from '@/components/related-articles';
 import { JsonLd } from '@/components/json-ld';
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/json-ld';
+import { getRelatedArticles } from '@/lib/related-articles';
+import { getAllArticles } from '@/lib/articles';
 import {
   SITE_NAME,
   SITE_URL,
@@ -93,6 +96,7 @@ export default async function ArticlePage({
   if (!article) notFound();
 
   const articleUrl = `${SITE_URL}${localePath(locale as SupportedLocale, `/articles/${slug}`)}`;
+  const related = getRelatedArticles(slug, locale, 3, getAllArticles(locale));
   const articleStructured = articleJsonLd({
     title: article.title,
     description: article.excerpt,
@@ -128,6 +132,7 @@ export default async function ArticlePage({
       </div>
 
       <ArticleFooter article={article} />
+      <RelatedArticles articles={related} />
       <Comments slug={slug} locale={locale} />
     </article>
   );

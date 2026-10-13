@@ -64,7 +64,9 @@
     "adminLoginButton": "Sign in",
     "adminLogout": "Sign out",
     "adminEmpty": "No comments waiting.",
-    "confirmDelete": "Delete this comment? This cannot be undone."
+    "confirmDelete": "Delete this comment? This cannot be undone.",
+    "relatedTitle": "Related articles",
+    "relatedSubtitle": "Continue reading on this topic."
   },
   "footer": {
     "copyright": "All rights reserved.",
