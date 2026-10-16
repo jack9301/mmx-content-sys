@@ -6,10 +6,13 @@ import { ArticleHeader } from '@/components/article-header';
 import { ArticleFooter } from '@/components/article-footer';
 import { Comments } from '@/components/comments';
 import { RelatedArticles } from '@/components/related-articles';
+import { TableOfContents } from '@/components/table-of-contents';
+import { ReadingProgress } from '@/components/reading-progress';
 import { JsonLd } from '@/components/json-ld';
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/json-ld';
 import { getRelatedArticles } from '@/lib/related-articles';
 import { getAllArticles } from '@/lib/articles';
+import { extractHeadings } from '@/lib/mdx-headings';
 import {
   SITE_NAME,
   SITE_URL,
@@ -97,6 +100,7 @@ export default async function ArticlePage({
 
   const articleUrl = `${SITE_URL}${localePath(locale as SupportedLocale, `/articles/${slug}`)}`;
   const related = getRelatedArticles(slug, locale, 3, getAllArticles(locale));
+  const headings = extractHeadings(article.content);
   const articleStructured = articleJsonLd({
     title: article.title,
     description: article.excerpt,
@@ -114,26 +118,45 @@ export default async function ArticlePage({
   ]);
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-16">
+    <>
+      <ReadingProgress />
       <JsonLd data={articleStructured} />
       <JsonLd data={breadcrumbs} />
-      <ArticleHeader article={article} locale={locale} />
 
-      <div className="prose prose-lg prose-neutral mx-auto mt-12 font-serif">
-        <MDXRemote
-          source={article.content}
-          options={{
-            mdxOptions: {
-              remarkPlugins: [remarkGfm],
-              rehypePlugins: [rehypeSlug],
-            },
-          }}
-        />
-      </div>
+      <article className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <ArticleHeader article={article} locale={locale} />
+        </div>
 
-      <ArticleFooter article={article} />
-      <RelatedArticles articles={related} />
-      <Comments slug={slug} locale={locale} />
-    </article>
+        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_220px]">
+          <div className="prose prose-lg prose-neutral max-w-none font-serif">
+            <MDXRemote
+              source={article.content}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                  rehypePlugins: [rehypeSlug],
+                },
+              }}
+            />
+          </div>
+          {headings.length > 0 && (
+            <aside className="hidden lg:block">
+              <TableOfContents headings={headings} />
+            </aside>
+          )}
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl">
+          <ArticleFooter article={article} />
+        </div>
+        <div className="mx-auto max-w-3xl">
+          <RelatedArticles articles={related} />
+        </div>
+        <div className="mx-auto max-w-3xl">
+          <Comments slug={slug} locale={locale} />
+        </div>
+      </article>
+    </>
   );
 }
