@@ -62,6 +62,33 @@ export function alternatesFor(
 }
 
 /**
+ * Build alternate-language links for hreflang, but only include a locale
+ * if a translation of the given article actually exists for it.
+ *
+ * Use this on article pages so we don't declare hreflang for /zh/.../ja/...
+ * versions that 404 (which causes Google Search Console to flag
+ * "Alternate page with proper canonical tag" + "Not found (404)").
+ *
+ * If no other locale has a translation, only the current locale and
+ * x-default are emitted.
+ */
+export function alternatesForArticle(
+  path: string,
+  canonicalLocale: SupportedLocale,
+  existsIn: (locale: string) => boolean
+): Record<string, string> & { 'x-default': string } {
+  const result: Record<string, string> = {};
+  for (const loc of SUPPORTED_LOCALES) {
+    if (existsIn(loc)) {
+      result[loc] = `${SITE_URL}${localePath(loc, path)}`;
+    }
+  }
+  // x-default always points to the canonical locale
+  result['x-default'] = `${SITE_URL}${localePath(canonicalLocale, path)}`;
+  return result as Record<string, string> & { 'x-default': string };
+}
+
+/**
  * Common OpenGraph image spec.
  */
 export const OG_IMAGE_SPEC = {

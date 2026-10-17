@@ -18,6 +18,7 @@ import {
   SITE_URL,
   KEYWORDS_BASE,
   alternatesFor,
+  alternatesForArticle,
   localePath,
   type SupportedLocale,
   LOCALE_OG,
@@ -58,7 +59,9 @@ export async function generateMetadata({
     authors: [{ name: SITE_NAME, url: SITE_URL }],
     alternates: {
       canonical: path,
-      languages: alternatesFor(articlePath, safeLocale),
+      languages: alternatesForArticle(articlePath, safeLocale, (loc) => {
+        return getArticleBySlug(slug, loc) !== null;
+      }),
     },
     openGraph: {
       type: 'article',
