@@ -67,7 +67,12 @@
     "confirmDelete": "Delete this comment? This cannot be undone.",
     "relatedTitle": "Related articles",
     "relatedSubtitle": "Continue reading on this topic.",
-    "tocLabel": "On this page"
+    "tocLabel": "On this page",
+    "backToAll": "Back to all articles",
+    "publishedOn": "Published on",
+    "tags": "Tags",
+    "commentNote": "Note",
+    "yourComment": "Your comment"
   },
   "footer": {
     "copyright": "All rights reserved.",

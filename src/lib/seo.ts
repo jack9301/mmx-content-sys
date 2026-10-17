@@ -13,13 +13,11 @@ export const SITE_LOGO_URL = `${SITE_URL}/favicon.png`;
 export const TWITTER_HANDLE = '@agubihealth';
 export const SITE_LOCALE = 'en_US';
 
-export const SUPPORTED_LOCALES = ['en', 'zh', 'ja'] as const;
+export const SUPPORTED_LOCALES = ['en'] as const;
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
 
 export const LOCALE_OG: Record<SupportedLocale, string> = {
   en: 'en_US',
-  zh: 'zh_CN',
-  ja: 'ja_JP',
 };
 
 export const KEYWORDS_BASE = [

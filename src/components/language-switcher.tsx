@@ -6,8 +6,6 @@ import { useState, useTransition } from 'react';
 
 const labels: Record<string, string> = {
   en: 'EN',
-  zh: '中文',
-  ja: '日本語',
 };
 
 export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
@@ -23,11 +21,23 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
     });
   };
 
+  // Single-locale site: render a static label, no dropdown.
+  if (routing.locales.length <= 1) {
+    return (
+      <span
+        aria-label="Site language"
+        className="text-sm text-neutral-600"
+      >
+        {labels[currentLocale] ?? currentLocale.toUpperCase()}
+      </span>
+    );
+  }
+
   return (
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="text-sm text-neutral-600 hover:text-neutral-900:text-neutral-100"
+        className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
         aria-label="Switch language"
       >
         {labels[currentLocale] ?? currentLocale.toUpperCase()}
@@ -38,7 +48,7 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: string }) {
             <button
               key={loc}
               onClick={() => switchTo(loc)}
-              className={`block w-full px-3 py-1.5 text-left text-sm hover:bg-neutral-50:bg-neutral-800/40 ${
+              className={`block w-full px-3 py-1.5 text-left text-sm transition-colors hover:bg-neutral-50 ${
                 loc === currentLocale ? 'font-medium text-accent' : 'text-neutral-700'
               }`}
             >
