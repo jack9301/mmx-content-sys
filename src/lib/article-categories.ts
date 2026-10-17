@@ -23,6 +23,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   // Causes & Risk
   'prostate-cancer-risk-factors': 'causes-risk',
   'prostatitis-risk-factors': 'causes-risk',
+  'frequent-erections-cpps': 'causes-risk',
   'diet-prostate-health-evidence': 'causes-risk',
 
   // Conditions (what it is)
