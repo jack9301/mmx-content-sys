@@ -24,6 +24,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'prostate-cancer-risk-factors': 'causes-risk',
   'prostatitis-risk-factors': 'causes-risk',
   'frequent-erections-cpps': 'causes-risk',
+  'modern-life-bph-worsening': 'causes-risk',
   'diet-prostate-health-evidence': 'causes-risk',
 
   // Conditions (what it is)
