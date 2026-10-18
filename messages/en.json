@@ -72,7 +72,8 @@
     "publishedOn": "Published on",
     "tags": "Tags",
     "commentNote": "Note",
-    "yourComment": "Your comment"
+    "yourComment": "Your comment",
+    "keyTakeaways": "Key Takeaways"
   },
   "footer": {
     "copyright": "All rights reserved.",

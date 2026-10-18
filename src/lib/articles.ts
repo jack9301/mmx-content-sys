@@ -11,6 +11,7 @@ export type Article = {
   date: string;
   tags: string[];
   coverImage?: string;
+  keyTakeaways?: string[];
   content: string;
   readingTime: number;
 };
@@ -30,6 +31,7 @@ function readArticleFile(slug: string, locale: string): Article | null {
     date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
     tags: data.tags ?? [],
     coverImage: data.coverImage ?? data.cover,
+    keyTakeaways: data.keyTakeaways ?? undefined,
     content,
     readingTime: Math.max(1, Math.round(readingTime(content).minutes)),
   };

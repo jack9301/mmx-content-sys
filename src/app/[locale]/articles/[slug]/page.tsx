@@ -8,6 +8,7 @@ import { Comments } from '@/components/comments';
 import { RelatedArticles } from '@/components/related-articles';
 import { TableOfContents } from '@/components/table-of-contents';
 import { ReadingProgress } from '@/components/reading-progress';
+import { KeyTakeaways } from '@/components/key-takeaways';
 import { JsonLd } from '@/components/json-ld';
 import { articleJsonLd, breadcrumbJsonLd } from '@/lib/json-ld';
 import { getRelatedArticles } from '@/lib/related-articles';
@@ -133,6 +134,9 @@ export default async function ArticlePage({
 
         <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_220px]">
           <div className="prose prose-lg prose-neutral max-w-none font-serif">
+            {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+              <KeyTakeaways items={article.keyTakeaways} />
+            )}
             <MDXRemote
               source={article.content}
               options={{
