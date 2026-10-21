@@ -25,6 +25,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'prostatitis-risk-factors': 'causes-risk',
   'frequent-erections-cpps': 'causes-risk',
   'modern-life-bph-worsening': 'causes-risk',
+  'stress-anxiety-prostate-symptoms': 'causes-risk',
   'diet-prostate-health-evidence': 'causes-risk',
 
   // Conditions (what it is)
@@ -33,6 +34,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'prostate-cancer-guide': 'conditions',
   'prostate-stones-explained': 'conditions',
   'prostate-cysts-explained': 'conditions',
+  'interstitial-cystitis-vs-cpps': 'conditions',
 
   // Treatment (what to do)
   'chronic-prostatitis-recovery': 'treatment',
@@ -40,6 +42,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'prostate-massage-evidence': 'treatment',
   'prostate-massage-safety': 'treatment',
   'cushions-chairs-prostate-pain': 'treatment',
+  'kegels-for-men': 'treatment',
 
   // Lifestyle (daily habits, prevention)
   'understanding-prostatitis': 'lifestyle',
