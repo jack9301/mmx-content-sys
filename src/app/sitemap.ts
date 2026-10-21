@@ -69,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       seen.add(key);
       items.push({
         url: `${SITE_URL}${localePath(locale, `/articles/${article.slug}`)}`,
-        lastModified: new Date(article.date),
+        lastModified: new Date(article.updated ?? article.date),
         changeFrequency: 'monthly',
         priority: 0.8,
         alternates: {

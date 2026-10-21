@@ -62,6 +62,7 @@ export function articleJsonLd(args: {
   url: string;
   image?: string;
   datePublished: string; // ISO 8601
+  dateModified?: string; // ISO 8601; defaults to datePublished
   authorName: string;
   inLanguage: string;
   keywords: string[];
@@ -74,7 +75,7 @@ export function articleJsonLd(args: {
     url: args.url,
     image: args.image ? [args.image] : undefined,
     datePublished: args.datePublished,
-    dateModified: args.datePublished,
+    dateModified: args.dateModified ?? args.datePublished,
     author: {
       '@type': 'Organization',
       name: args.authorName,

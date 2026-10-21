@@ -80,6 +80,7 @@ export async function generateMetadata({
           ]
         : undefined,
       publishedTime: article.date,
+      modifiedTime: article.updated ?? article.date,
       authors: [SITE_NAME],
       tags: article.tags,
     },
@@ -111,6 +112,7 @@ export default async function ArticlePage({
     url: articleUrl,
     image: article.coverImage,
     datePublished: article.date,
+    dateModified: article.updated ?? article.date,
     authorName: SITE_NAME,
     inLanguage: locale,
     keywords: [...KEYWORDS_BASE, ...article.tags].filter(Boolean),

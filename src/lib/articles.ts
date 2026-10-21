@@ -9,6 +9,8 @@ export type Article = {
   title: string;
   excerpt: string;
   date: string;
+  /** Last-modified timestamp: frontmatter `updated` if present, else file mtime. */
+  updated: string;
   tags: string[];
   coverImage?: string;
   keyTakeaways?: string[];
@@ -27,8 +29,11 @@ function readArticleFile(slug: string, locale: string): Article | null {
     slug,
     locale,
     title: data.title ?? slug,
-    excerpt: data.excerpt ?? '',
+    excerpt: data.excerpt ?? data.description ?? '',
     date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
+    updated: data.updated
+      ? new Date(data.updated).toISOString()
+      : fs.statSync(filePath).mtime.toISOString(),
     tags: data.tags ?? [],
     coverImage: data.coverImage ?? data.cover,
     keyTakeaways: data.keyTakeaways ?? undefined,
