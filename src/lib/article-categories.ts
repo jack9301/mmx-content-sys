@@ -43,6 +43,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'prostate-massage-safety': 'treatment',
   'cushions-chairs-prostate-pain': 'treatment',
   'kegels-for-men': 'treatment',
+  'finasteride-dutasteride-bph': 'treatment',
 
   // Lifestyle (daily habits, prevention)
   'understanding-prostatitis': 'lifestyle',
