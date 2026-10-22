@@ -141,6 +141,18 @@ for (const slug of categoryMap.keys()) {
   }
 }
 
+// 11. Required documentation must exist (see DECISIONS.md 2026-10-22)
+const REQUIRED_DOCS = ['AGENTS.md', 'WRITING_STYLE.md', 'DECISIONS.md'];
+for (const doc of REQUIRED_DOCS) {
+  if (!fs.existsSync(path.join(ROOT, doc))) {
+    issues.push({
+      level: 'ERROR',
+      slug: '(project)',
+      message: `Required documentation missing: ${doc} — see DECISIONS.md`,
+    });
+  }
+}
+
 // Report
 const errors = issues.filter((i) => i.level === 'ERROR');
 const warns = issues.filter((i) => i.level === 'WARN');

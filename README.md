@@ -1,14 +1,16 @@
-# Quiet Pages
+# Agubi Men's Health
 
-A multilingual content website with built-in comment system. Built with Next.js, deployed on Cloudflare Pages.
+An evidence-based men's health site focused on prostate health. Built with Next.js, deployed on Cloudflare Pages.
+
+> **Working on this project?** Read [`AGENTS.md`](./AGENTS.md) first — it covers architecture, the article workflow, and the hard rules. Then [`WRITING_STYLE.md`](./WRITING_STYLE.md) and [`DECISIONS.md`](./DECISIONS.md).
 
 ## Stack
 
-- **Framework**: Next.js 14.2.35 + TypeScript + Tailwind CSS
-- **i18n**: next-intl (English, 中文, 日本語)
-- **Content**: MDX files in `content/{en,zh,ja}/`
-- **Comments**: Custom system, file-less, Cloudflare KV storage
-- **Hosting**: Cloudflare Pages (static + Functions)
+- **Framework**: Next.js 14.2.35 + TypeScript + Tailwind CSS 3.4
+- **Content**: MDX files in `content/en/`, parsed with `gray-matter` and `reading-time`
+- **Comments**: Custom system on Cloudflare KV, via Pages Functions
+- **SEO**: Build-time validator (`scripts/validate-seo.ts`) gates every deploy
+- **Hosting**: Cloudflare Pages (static export + Functions)
 
 ## Local Development
 
@@ -18,6 +20,14 @@ npm run dev
 ```
 
 Visit http://localhost:3000 — redirects to /en/ by default.
+
+## Scripts
+
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Local dev server |
+| `npm run validate:seo` | SEO checks only (no build) |
+| `npm run build` | Validate SEO, then build static output to `out/` |
 
 ## Build & Deploy
 
