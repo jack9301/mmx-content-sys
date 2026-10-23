@@ -23,9 +23,52 @@ The house style is adapted from good urology-clinic writing: direct, second-pers
 
 ---
 
-## 2. Default article structure
+## 2. Length: the hard limit
 
-### 2.1 Opener — 2 to 4 sentences
+**Target reading time is 5–6 minutes. That is 1,200–1,600 words.**
+
+This is a hard constraint, not a preference. Readers are on phones, between tasks, and busy. An article that takes 14 minutes to finish is an article that gets abandoned — and abandonment means they leave without the thing you wanted to teach them.
+
+| Reading time | Words | Verdict |
+|---|---|---|
+| Under 3 min | < 700 | Too thin unless the question is genuinely narrow |
+| **5–6 min** | **1,200–1,600** | **The target** |
+| 7–8 min | 1,700–2,000 | Only with explicit approval |
+| 9+ min | 2,100+ | Don't write it this way |
+
+**If the topic doesn't fit in 1,600 words, it isn't one article.** Split it. Write the single most useful thing well rather than three things adequately. A reader who finishes one article and comes back is worth more than a reader who abandons a comprehensive one halfway.
+
+### How to cut without losing value
+
+Long drafts usually get long through these, in rough order of how much fat each carries:
+
+- **Context the reader doesn't need.** You don't have to explain what BPH is in an article about finasteride if the reader clicked from your BPH explainer.
+- **Redundant restatement.** Saying the mechanism twice, in different words, with the same conclusion.
+- **Inherited hedging.** Three consecutive sentences each caveating the same weak piece of evidence. One caveat is enough.
+- **Decontextualized lists.** Ten-item lists where four items carry the argument and six are padding.
+- **Scope creep.** "While we're here, a note on alpha-blockers" — that's a different article with its own URL.
+
+### Where to spend the budget
+
+- **The opener.** Two to four sentences. Say something specific. Cut "In this article, we will explore."
+- **Key Takeaways.** Free comprehension — rendered above the fold, costs nothing in reading time.
+- **Evidence with named sources.** "PLESS found a 57% reduction" carries weight in thirty words. A paragraph paraphrasing it carries the same weight in ninety.
+- **The mechanism section.** One or two. This is the core value; everything else is framing.
+- **A close that says something.** Not a summary of the summary — a judgment, a reframe, a next consideration.
+
+### Enforce it before you publish
+
+Check the word count. If it's over 1,600, cut before building, not after.
+
+```bash
+wc -w content/en/your-slug.mdx
+```
+
+---
+
+## 3. Default article structure
+
+### 3.1 Opener — 2 to 4 sentences
 
 Answer the title's question immediately. No throat-clearing, no "in this article," no rhetorical questions before the answer.
 
@@ -35,7 +78,7 @@ Answer the title's question immediately. No throat-clearing, no "in this article
 **Bad:**
 > Prostate health is an important topic for men of all ages. Many men wonder whether their habits affect their prostate. In this article, we'll explore the relationship between erections and CPPS.
 
-### 2.2 Key Takeaways box
+### 3.2 Key Takeaways box
 
 Immediately after the opener, 4–6 bullets in the frontmatter `keyTakeaways` array. These render as a teal callout box above the body.
 
@@ -47,7 +90,7 @@ keyTakeaways:
   - "The connection is pelvic floor muscle fatigue, not prostate damage"
 ```
 
-### 2.3 Body sections
+### 3.3 Body sections
 
 Section headings should be **question-led or task-led**, not abstract labels.
 
@@ -60,7 +103,7 @@ Section headings should be **question-led or task-led**, not abstract labels.
 
 **Not every article needs the same section count.** Typical range is 6–9 H2s for a 1,500–2,500 word piece.
 
-### 2.4 Lists — bold lead-in + colon
+### 3.4 Lists — bold lead-in + colon
 
 This is the house convention. It makes lists scannable and lets the reader stop after the bold phrase if that's all they needed.
 
@@ -72,7 +115,7 @@ This is the house convention. It makes lists scannable and lets the reader stop 
 
 Bold the term, not the whole sentence. Keep the explanation after the colon readable on its own.
 
-### 2.5 Closing
+### 3.5 Closing
 
 End on substance. A synthesis, a framework, or a clear summary of what the reader should take away.
 
@@ -80,7 +123,7 @@ End on substance. A synthesis, a framework, or a clear summary of what the reade
 
 A good closing names the through-line: *"The answer isn't 'stop.' The answer is 'pay attention, modify the patterns that hurt you, and stay in the game.'"*
 
-### 2.6 References
+### 3.6 References
 
 End every article with a numbered reference list. Full citation: author, year, title, source.
 
@@ -93,7 +136,7 @@ End every article with a numbered reference list. Full citation: author, year, t
 
 ---
 
-## 3. Sentence and paragraph mechanics
+## 4. Sentence and paragraph mechanics
 
 These are **reference points, not rules**. Adjust to the content.
 
@@ -109,7 +152,7 @@ Variety matters. A paragraph of eleven 15-word sentences reads as robotic. Mix s
 
 ---
 
-## 4. Evidence and citation
+## 5. Evidence and citation
 
 **Inline, not footnote-style.** Name the source in the sentence:
 
@@ -129,7 +172,7 @@ Variety matters. A paragraph of eleven 15-word sentences reads as robotic. Mix s
 
 ---
 
-## 5. Sexual health content
+## 6. Sexual health content
 
 This is a men's health site. Sexual health is core content, not sensitive content.
 
@@ -143,9 +186,9 @@ That gives the reader the actual mechanism. It does not moralize. It also does n
 
 ---
 
-## 6. Images
+## 7. Images
 
-### 5.1 Illustration style
+### 7.1 Illustration style
 
 - Watercolor, soft, abstract
 - Peach + sage green palette on cream
@@ -153,18 +196,18 @@ That gives the reader the actual mechanism. It does not moralize. It also does n
 - No text or labels in the image itself
 - Anatomical subjects rendered tastefully — abstract is fine, clinical realism is fine, explicit is not
 
-### 5.2 Alt text
+### 7.2 Alt text
 
 Describe the image for a screen-reader user. Do not stuff keywords.
 
 **Good:** `Pelvic floor muscles highlighted in watercolor, abstract medical art`
 **Bad:** `prostatitis pelvic floor diagram best treatment for CPPS`
 
-### 5.3 Placement
+### 7.3 Placement
 
 3–5 inline images per article, placed after the section that introduces the concept. Never repeat the cover inline.
 
-### 5.4 Real product photos
+### 7.4 Real product photos
 
 When an article discusses a specific purchasable product, use a real product photo rather than an illustration. Real products build trust and let readers actually identify the item.
 
@@ -172,7 +215,7 @@ Source via `images_search_and_download`, upload through `get_upload_url` + PUT, 
 
 ---
 
-## 7. Anti-patterns
+## 8. Anti-patterns
 
 Cut on sight:
 
@@ -199,7 +242,7 @@ Also cut:
 
 ---
 
-## 8. Worked examples
+## 9. Worked examples
 
 Read these two published articles for calibration:
 
@@ -214,8 +257,9 @@ Opens by naming the contradiction ("the most-prescribed exercise is the wrong on
 
 ---
 
-## 9. Quick checklist before publishing
+## 10. Quick checklist before publishing
 
+- [ ] **Word count is 1,200–1,600 (5–6 min read). Over 1,600 means cut before building.**
 - [ ] Title under 60 characters
 - [ ] Excerpt 120–155 characters, states the reader's benefit
 - [ ] Frontmatter uses `excerpt`, not `description`

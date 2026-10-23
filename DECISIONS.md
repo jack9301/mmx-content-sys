@@ -6,6 +6,29 @@ Newest first.
 
 ---
 
+## 2026-10-23 — Reading-time budget: 5–6 minutes (1,200–1,600 words)
+
+**Context:** The finasteride/dutasteride article came in at 2,894 words — about 14 minutes to read. The user's assessment: *"a little bit long for the readers because everybody is busy now."*
+
+This was not a one-off complaint about one article. It exposed a pattern. Of the 28 published articles, only two were under 1,600 words. The longest, `prostatitis-whole-body-effects`, is 3,496 words. The writing had been drifting long because comprehensive coverage felt more valuable than finishability.
+
+**Decision:** Target reading time is 5–6 minutes, or **1,200–1,600 words**. This is a hard constraint, not a preference.
+
+**Where it's documented:**
+- `AGENTS.md` §7, hard rule #2 — an agent reads this first
+- `WRITING_STYLE.md` §2 — the rationale, a word-count/read-time table, and specific cutting techniques
+- `WRITING_STYLE.md` §10 — first item on the pre-publish checklist
+
+**The core principle:** if a topic doesn't fit in 1,600 words, it's two articles, not one long one. Write the single most useful thing well rather than three things adequately. A reader who finishes one article and comes back is worth more than a reader who abandons a comprehensive one halfway.
+
+**Also documented in §2:** where long drafts usually get long (context the reader doesn't need, redundant restatement, inherited hedging, padded lists, scope creep) and where to spend the word budget instead.
+
+**Not applied retroactively.** The 26 existing over-length articles were left as-is. Rewriting them is a separate decision — some may deserve splitting, some may be fine, and the user has not asked for that yet. If they want it, do it article by article with approval, not as a batch.
+
+**Reversible:** Yes, but the reader abandonment problem is real and would return with it.
+
+---
+
 ## 2026-10-22 — Wrote AGENTS.md, WRITING_STYLE.md, DECISIONS.md
 
 **Context:** The project existed only as code plus one agent's conversation memory. If that agent restarted with no memory, it would have the code but none of the reasoning — and would likely reintroduce bugs that were already fixed.

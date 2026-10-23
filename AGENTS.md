@@ -225,12 +225,13 @@ Cloudflare Pages builds and deploys automatically (~2–3 min).
 ## 7. Hard rules — the user has stated these explicitly
 
 1. **Never write a "when to see a doctor," "see me in clinic," or "when to come see me" section.** Articles close on a substantive summary. This is a standing rule for all future articles.
-2. **No filler phrases.** Cut these on sight: "It is important to note that", "It is worth noting that", "Ultimately,", "In essence,", "In short,", "The honest answer is that", "Notably,", "Importantly,", "Specifically," and wordy intensifiers ("really", "very", "just", "quite", "absolutely", "arguably", "literally", "honestly", "essentially", "fundamentally").
-3. **Keep all citations.** Never cut references for brevity. This is YMYL medical content and the sourcing is the point.
-4. **No moralizing about sexual content.** Frame pornography, masturbation, and frequency clinically — vasocongestion, pelvic floor load, recovery patterns. The user has explicitly asked for this.
-5. **Respect the user's scope.** When given key points, expand and correct them faithfully but do not bolt on unrequested sections.
-6. **Do not add a CMS.** Content stays as MDX files in git.
-7. **Do not modify `openclaw.json`** or use any auto-fix command. Config changes go through the `gateway` tool only.
+2. **Target 5–6 minutes of reading time (1,200–1,600 words).** This is a hard limit, not a preference. Readers are busy and on phones. Long articles get abandoned. If the topic doesn't fit in 1,600 words, it's two articles — not one long one. Check with `wc -w` before building. See `WRITING_STYLE.md` §2 for how to cut.
+3. **No filler phrases.** Cut these on sight: "It is important to note that", "It is worth noting that", "Ultimately,", "In essence,", "In short,", "The honest answer is that", "Notably,", "Importantly,", "Specifically," and wordy intensifiers ("really", "very", "just", "quite", "absolutely", "arguably", "literally", "honestly", "essentially", "fundamentally").
+4. **Keep all citations.** Never cut references for brevity. This is YMYL medical content and the sourcing is the point.
+5. **No moralizing about sexual content.** Frame pornography, masturbation, and frequency clinically — vasocongestion, pelvic floor load, recovery patterns. The user has explicitly asked for this.
+6. **Respect the user's scope.** When given key points, expand and correct them faithfully but do not bolt on unrequested sections.
+7. **Do not add a CMS.** Content stays as MDX files in git.
+8. **Do not modify the agent config file** or use any auto-fix command. Config changes go through the `gateway` tool only.
 
 ---
 
