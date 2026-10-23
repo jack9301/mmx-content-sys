@@ -225,7 +225,7 @@ Cloudflare Pages builds and deploys automatically (~2–3 min).
 ## 7. Hard rules — the user has stated these explicitly
 
 1. **Never write a "when to see a doctor," "see me in clinic," or "when to come see me" section.** Articles close on a substantive summary. This is a standing rule for all future articles.
-2. **Target 5–6 minutes of reading time (1,200–1,600 words).** This is a hard limit, not a preference. Readers are busy and on phones. Long articles get abandoned. If the topic doesn't fit in 1,600 words, it's two articles — not one long one. Check with `wc -w` before building. See `WRITING_STYLE.md` §2 for how to cut.
+2. **Aim for 5–6 minutes of reading time (1,200–1,600 words).** This is the default target, not a hard cap — some articles genuinely need more, and cutting them would remove the value. Go longer when the content requires it; just don't pad to fill the space. Check with `wc -w` and judge on whether every paragraph earns its place. See `WRITING_STYLE.md` §2.
 3. **No filler phrases.** Cut these on sight: "It is important to note that", "It is worth noting that", "Ultimately,", "In essence,", "In short,", "The honest answer is that", "Notably,", "Importantly,", "Specifically," and wordy intensifiers ("really", "very", "just", "quite", "absolutely", "arguably", "literally", "honestly", "essentially", "fundamentally").
 4. **Keep all citations.** Never cut references for brevity. This is YMYL medical content and the sourcing is the point.
 5. **No moralizing about sexual content.** Frame pornography, masturbation, and frequency clinically — vasocongestion, pelvic floor load, recovery patterns. The user has explicitly asked for this.

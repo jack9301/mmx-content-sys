@@ -23,46 +23,48 @@ The house style is adapted from good urology-clinic writing: direct, second-pers
 
 ---
 
-## 2. Length: the hard limit
+## 2. Length: a target, not a rule
 
-**Target reading time is 5–6 minutes. That is 1,200–1,600 words.**
+**Aim for 5–6 minutes of reading time (1,200–1,600 words).**
 
-This is a hard constraint, not a preference. Readers are on phones, between tasks, and busy. An article that takes 14 minutes to finish is an article that gets abandoned — and abandonment means they leave without the thing you wanted to teach them.
+This is a **default to aim at, not a hard cap.** Most articles should land here, because readers are on phones, between tasks, and busy — and an article nobody finishes teaches them nothing.
 
-| Reading time | Words | Verdict |
+**But some articles genuinely need more.** A mechanism that requires three layers of explanation, a comparison across two diseases with nine overlapping symptoms, a drug trial with a safety issue that needs careful handling — these don't compress into 1,600 words without losing the thing that makes them valuable. When that happens, **write the full article and let it run long.**
+
+| Reading time | Words | When it's right |
 |---|---|---|
-| Under 3 min | < 700 | Too thin unless the question is genuinely narrow |
-| **5–6 min** | **1,200–1,600** | **The target** |
-| 7–8 min | 1,700–2,000 | Only with explicit approval |
-| 9+ min | 2,100+ | Don't write it this way |
+| Under 3 min | < 700 | A genuinely narrow question, answered completely |
+| **5–6 min** | **1,200–1,600** | **The default — aim here** |
+| 7–9 min | 1,700–2,200 | The topic needs real depth to be useful |
+| 10+ min | 2,200+ | Only when cutting would break the article |
 
-**If the topic doesn't fit in 1,600 words, it isn't one article.** Split it. Write the single most useful thing well rather than three things adequately. A reader who finishes one article and comes back is worth more than a reader who abandons a comprehensive one halfway.
+### The judgment call
 
-### How to cut without losing value
+Ask whether every paragraph is load-bearing. If yes, the length is the topic's fault, not the draft's — keep it. If some paragraphs are padding, cut them regardless of where the total lands.
 
-Long drafts usually get long through these, in rough order of how much fat each carries:
+The failure mode is not "too long." It's **long because it meanders**. A tight 2,200-word article is better than a padded 1,600-word one. And a genuinely comprehensive piece that's 12 minutes is fine — as long as it's well-structured so a reader can skim, and the opener makes the value obvious in two sentences.
 
-- **Context the reader doesn't need.** You don't have to explain what BPH is in an article about finasteride if the reader clicked from your BPH explainer.
-- **Redundant restatement.** Saying the mechanism twice, in different words, with the same conclusion.
-- **Inherited hedging.** Three consecutive sentences each caveating the same weak piece of evidence. One caveat is enough.
-- **Decontextualized lists.** Ten-item lists where four items carry the argument and six are padding.
-- **Scope creep.** "While we're here, a note on alpha-blockers" — that's a different article with its own URL.
+### Prefer splitting when there's an easy seam
 
-### Where to spend the budget
+If a draft has grown past 2,200 words and there's a clean split point — "here's the disease, here's the treatment" — two articles serve readers better than one long one. Each gets its own URL, its own search intent, its own chance to rank. But don't manufacture a split at the cost of coherence.
 
-- **The opener.** Two to four sentences. Say something specific. Cut "In this article, we will explore."
-- **Key Takeaways.** Free comprehension — rendered above the fold, costs nothing in reading time.
-- **Evidence with named sources.** "PLESS found a 57% reduction" carries weight in thirty words. A paragraph paraphrasing it carries the same weight in ninety.
-- **The mechanism section.** One or two. This is the core value; everything else is framing.
-- **A close that says something.** Not a summary of the summary — a judgment, a reframe, a next consideration.
+### When a draft runs long, cut the usual fat first
 
-### Enforce it before you publish
+- **Context the reader doesn't need.** Don't re-explain BPH in the finasteride article if they arrived from the BPH explainer.
+- **Redundant restatement.** The same mechanism said twice in different words.
+- **Inherited hedging.** Three sentences caveating the same weak evidence. One is enough.
+- **Decontextualized lists.** Ten items where four carry the argument.
+- **Scope creep.** "While we're here, a note on alpha-blockers" belongs on its own URL.
 
-Check the word count. If it's over 1,600, cut before building, not after.
+Cut those first, then judge what's left on its merits.
+
+### Check before publishing
 
 ```bash
 wc -w content/en/your-slug.mdx
 ```
+
+Over 1,600 is fine if the content earns it. Over 1,600 with nothing left to cut is not.
 
 ---
 
@@ -259,7 +261,7 @@ Opens by naming the contradiction ("the most-prescribed exercise is the wrong on
 
 ## 10. Quick checklist before publishing
 
-- [ ] **Word count is 1,200–1,600 (5–6 min read). Over 1,600 means cut before building.**
+- [ ] **Word count is around 1,200–1,600 (5–6 min). Over is fine when the content earns it; under is fine when nothing needed cutting.**
 - [ ] Title under 60 characters
 - [ ] Excerpt 120–155 characters, states the reader's benefit
 - [ ] Frontmatter uses `excerpt`, not `description`

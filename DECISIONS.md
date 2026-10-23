@@ -6,26 +6,28 @@ Newest first.
 
 ---
 
-## 2026-10-23 — Reading-time budget: 5–6 minutes (1,200–1,600 words)
+## 2026-10-23 — Reading-time target: 5–6 minutes (1,200–1,600 words)
 
 **Context:** The finasteride/dutasteride article came in at 2,894 words — about 14 minutes to read. The user's assessment: *"a little bit long for the readers because everybody is busy now."*
 
-This was not a one-off complaint about one article. It exposed a pattern. Of the 28 published articles, only two were under 1,600 words. The longest, `prostatitis-whole-body-effects`, is 3,496 words. The writing had been drifting long because comprehensive coverage felt more valuable than finishability.
+This prompted an audit of all 28 articles. Only two were under 1,600 words; the longest was 3,496. The writing had been drifting long, and most articles should be shorter.
 
-**Decision:** Target reading time is 5–6 minutes, or **1,200–1,600 words**. This is a hard constraint, not a preference.
+**The user then clarified the intent**, which is the important part:
+
+> *"the words and reading time is not a mandatory rule, you can adjust it flexible according to the article's contents. It means that the article reading time and article words can exceed these rules if it has to do so, but the best reading time it should be in this range."*
+
+**Decision:** 5–6 minutes (1,200–1,600 words) is the **default target, not a hard cap.** Articles that genuinely need to run longer should. The failure mode to avoid is not length — it's padding.
 
 **Where it's documented:**
-- `AGENTS.md` §7, hard rule #2 — an agent reads this first
-- `WRITING_STYLE.md` §2 — the rationale, a word-count/read-time table, and specific cutting techniques
-- `WRITING_STYLE.md` §10 — first item on the pre-publish checklist
+- `AGENTS.md` §7, hard rule #2 — phrased as a target, with explicit permission to exceed
+- `WRITING_STYLE.md` §2 — the judgment call, when splitting is better than compressing, and the usual fat to cut first
+- `WRITING_STYLE.md` §10 — first item on the pre-publish checklist, framed as a check rather than a gate
 
-**The core principle:** if a topic doesn't fit in 1,600 words, it's two articles, not one long one. Write the single most useful thing well rather than three things adequately. A reader who finishes one article and comes back is worth more than a reader who abandons a comprehensive one halfway.
+**The principle as the user stated it:** write to the content. If cutting to 1,600 words would remove the thing that makes the article worth reading, don't cut. If paragraphs exist because they were written rather than because they carry weight, cut them regardless of the total.
 
-**Also documented in §2:** where long drafts usually get long (context the reader doesn't need, redundant restatement, inherited hedging, padded lists, scope creep) and where to spend the word budget instead.
+**Structural mitigation for long articles:** the Key Takeaways box and in-article TOC let a reader get the value in 30 seconds or navigate directly to the section they need. This is why long articles are acceptable here in a way they wouldn't be on a site without those affordances.
 
-**Not applied retroactively.** The 26 existing over-length articles were left as-is. Rewriting them is a separate decision — some may deserve splitting, some may be fine, and the user has not asked for that yet. If they want it, do it article by article with approval, not as a batch.
-
-**Reversible:** Yes, but the reader abandonment problem is real and would return with it.
+**Reversible:** Yes.
 
 ---
 
