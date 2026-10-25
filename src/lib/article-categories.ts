@@ -45,6 +45,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'kegels-for-men': 'treatment',
   'finasteride-dutasteride-bph': 'treatment',
   'prostate-health-by-decade': 'conditions',
+  'prostatitis-erectile-dysfunction': 'conditions',
 
   // Lifestyle (daily habits, prevention)
   'understanding-prostatitis': 'lifestyle',
