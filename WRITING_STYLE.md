@@ -198,18 +198,34 @@ That gives the reader the actual mechanism. It does not moralize. It also does n
 - No text or labels in the image itself
 - Anatomical subjects rendered tastefully — abstract is fine, clinical realism is fine, explicit is not
 
-### 7.2 Alt text
+### 7.2 Male subjects must read as male — verify before publishing
+
+**Non-negotiable.** An abstract watercolor of a torso can easily read as a female body, especially when it shows a tapered waist, wide hips, or an inner-thigh gap. On a men's health site, a female-presenting figure is a credibility failure, not a minor aesthetic quibble.
+
+**The rule:** for any image showing a person or anatomy, the subject must be unambiguously male. When in doubt, use explicit male markers:
+
+- Facial hair (beard, mustache), receding hairline, pronounced brow ridge, angular jaw
+- Broad shoulder-to-hip ratio, visible muscular definition
+- A stethoscope, a male clinician's appearance where a doctor is depicted
+
+**Never use:** a lower back or hip study without clear male markers, an anonymous silhouette, or any prompt that omits gender.
+
+**Mandatory verification step.** Before publishing, run every generated image through `images_understand` with a prompt like *"Is the person in this image clearly a man? Is there anything that could read as female?"* Discard and regenerate anything that doesn't pass cleanly.
+
+Prompts like *"a man's body"* or *"pelvic region"* are not sufficient on their own — specify the concrete visual cues (beard, broad shoulders, athletic build) or the model will default to a generic, often feminine, figure.
+
+### 7.3 Alt text
 
 Describe the image for a screen-reader user. Do not stuff keywords.
 
 **Good:** `Pelvic floor muscles highlighted in watercolor, abstract medical art`
 **Bad:** `prostatitis pelvic floor diagram best treatment for CPPS`
 
-### 7.3 Placement
+### 7.4 Placement
 
 3–5 inline images per article, placed after the section that introduces the concept. Never repeat the cover inline.
 
-### 7.4 Real product photos
+### 7.5 Real product photos
 
 When an article discusses a specific purchasable product, use a real product photo rather than an illustration. Real products build trust and let readers actually identify the item.
 
@@ -272,6 +288,7 @@ Opens by naming the contradiction ("the most-prescribed exercise is the wrong on
 - [ ] At least 4 H2 headings, all question- or task-led
 - [ ] Lists use the bold lead-in + colon pattern
 - [ ] 3–5 inline images with descriptive alt text
+- [ ] **Every image showing a person or anatomy has been checked with `images_understand` and reads unambiguously as male**
 - [ ] Claims about evidence name the source and its limitations
 - [ ] No filler phrases from the anti-pattern list
 - [ ] Closing is substantive, not a doctor referral
