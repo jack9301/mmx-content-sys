@@ -46,6 +46,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'finasteride-dutasteride-bph': 'treatment',
   'prostate-health-by-decade': 'conditions',
   'prostatitis-erectile-dysfunction': 'conditions',
+  'erectile-dysfunction-prostate-connection': 'conditions',
 
   // Lifestyle (daily habits, prevention)
   'understanding-prostatitis': 'lifestyle',
