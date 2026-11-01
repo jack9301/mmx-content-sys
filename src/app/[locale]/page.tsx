@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getAllArticles } from '@/lib/articles';
+import { MostRead } from '@/components/most-read';
 import {
   SITE_NAME,
   SITE_TAGLINE,
@@ -61,7 +62,8 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations('home');
   const tSite = await getTranslations('site');
-  const articles = getAllArticles(locale).slice(0, 6);
+  const allArticles = getAllArticles(locale);
+  const articles = allArticles.slice(0, 6);
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
@@ -119,6 +121,19 @@ export default async function HomePage({
           </div>
         )}
       </section>
+
+      <MostRead
+        articles={allArticles.map((a) => ({
+          slug: a.slug,
+          title: a.title,
+          excerpt: a.excerpt,
+          date: a.date,
+          readingTime: a.readingTime,
+          coverImage: a.coverImage,
+        }))}
+        locale={locale}
+        limit={5}
+      />
     </div>
   );
 }

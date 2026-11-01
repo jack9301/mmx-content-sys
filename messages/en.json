@@ -35,7 +35,8 @@
     "latest": "Latest articles",
     "readMore": "Read article",
     "minRead": "min read",
-    "noArticles": "No articles yet."
+    "noArticles": "No articles yet.",
+    "mostRead": "Most read"
   },
   "article": {
     "minRead": "min read",
