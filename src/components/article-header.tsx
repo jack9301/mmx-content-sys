@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import type { Article } from '@/lib/articles';
 import { Link } from '@/i18n/routing';
+import { ViewCount } from '@/components/view-count';
 
 export function ArticleHeader({
   article,
@@ -36,6 +37,8 @@ export function ArticleHeader({
         <span>
           {article.readingTime} {t('minRead')}
         </span>
+        <span>·</span>
+        <ViewCount slug={article.slug} locale={locale} />
       </div>
       {article.coverImage && (
         <div className="mt-10 overflow-hidden rounded-lg">

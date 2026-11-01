@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getAllArticles } from '@/lib/articles';
+import { ViewCounts } from '@/components/view-counts';
 import {
   SITE_NAME,
   SITE_DESCRIPTION,
@@ -98,6 +99,9 @@ export default async function ArticlesIndexPage({
                   </p>
                   <p className="mt-2 text-xs text-neutral-400">
                     {article.readingTime} {t('minRead')}
+                  </p>
+                  <p className="mt-1 text-xs text-neutral-400">
+                    <ViewCounts slugs={[article.slug]} locale={locale} />
                   </p>
                 </div>
               </Link>
