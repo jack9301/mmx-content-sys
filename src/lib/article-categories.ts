@@ -44,6 +44,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'cushions-chairs-prostate-pain': 'treatment',
   'kegels-for-men': 'treatment',
   'finasteride-dutasteride-bph': 'treatment',
+  'alpha-blockers-bph': 'treatment',
   'prostate-health-by-decade': 'conditions',
   'prostatitis-erectile-dysfunction': 'conditions',
   'erectile-dysfunction-prostate-connection': 'conditions',
