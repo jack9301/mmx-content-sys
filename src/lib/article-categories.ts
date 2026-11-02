@@ -35,6 +35,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'prostate-stones-explained': 'conditions',
   'prostate-cysts-explained': 'conditions',
   'interstitial-cystitis-vs-cpps': 'conditions',
+  'prostate-problems-connected-system': 'conditions',
 
   // Treatment (what to do)
   'chronic-prostatitis-recovery': 'treatment',
