@@ -9,7 +9,14 @@ export type Article = {
   title: string;
   excerpt: string;
   date: string;
-  /** Last-modified timestamp: frontmatter `updated` if present, else file mtime. */
+  /**
+   * Last-modified timestamp.
+   *
+   * Prefers the frontmatter `updated` field. Falls back to the publish date
+   * rather than file mtime: on a fresh CI clone every file's mtime is the
+   * checkout time, which would make every article look freshly modified on
+   * every deploy and render the `lastmod` signal meaningless.
+   */
   updated: string;
   tags: string[];
   coverImage?: string;
@@ -33,7 +40,9 @@ function readArticleFile(slug: string, locale: string): Article | null {
     date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
     updated: data.updated
       ? new Date(data.updated).toISOString()
-      : fs.statSync(filePath).mtime.toISOString(),
+      : data.date
+        ? new Date(data.date).toISOString()
+        : new Date().toISOString(),
     tags: data.tags ?? [],
     coverImage: data.coverImage ?? data.cover,
     keyTakeaways: data.keyTakeaways ?? undefined,
