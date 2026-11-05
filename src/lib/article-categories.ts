@@ -46,6 +46,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'kegels-for-men': 'treatment',
   'finasteride-dutasteride-bph': 'treatment',
   'alpha-blockers-bph': 'treatment',
+  'erectile-dysfunction-treatment': 'treatment',
   'prostate-health-by-decade': 'conditions',
   'prostatitis-erectile-dysfunction': 'conditions',
   'erectile-dysfunction-prostate-connection': 'conditions',
