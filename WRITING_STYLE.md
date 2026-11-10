@@ -295,3 +295,30 @@ Opens by naming the contradiction ("the most-prescribed exercise is the wrong on
 - [ ] `**References**` block at the end
 - [ ] Slug registered in `src/lib/article-categories.ts`
 - [ ] `npm run build` passes the SEO validator
+
+## Article structure
+
+**Every article follows: symptom -> cause -> result.**
+
+The reader arrives searching with a symptom, not a diagnosis. They searched for
+sitting pain, erection problems, burning urination, weak stream. So the article
+opens in their language and stays there.
+
+| Part | What it does |
+|---|---|
+| **Symptom** | Open with what they actually feel and the search terms they used. Concrete, physical, recognisable. |
+| **Cause** | Explain the mechanism honestly, ranked by strength of evidence. Say what is *not* the cause where that is the useful finding. |
+| **Result** | What actually happens when this is treated properly. Include the honest limits and what does not work. |
+
+**Reading time:** aim for 3-5 minutes. Compress hard. Cut preamble, cut the
+mechanism digressions, cut the "context" sections. Keep only what a reader with
+this symptom needs in order to understand their cause and know what to do.
+
+**Target one symptom per article.** Symptom-led articles compete for overlapping
+keywords. Two articles covering the same symptom will cannibalise each other, so
+differentiate the target symptom or merge them.
+
+**Symptom-first titles.** Lead with what the reader feels, not with the
+condition name. `Sitting Pain and Burning: What Inflammation Actually Does in CPPS`
+beats `Inflammation in Chronic Pelvic Pain Syndrome`.
+
