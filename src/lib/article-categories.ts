@@ -20,6 +20,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'when-to-see-urologist': 'symptoms',
   'prostatitis-whole-body-effects': 'symptoms',
   'fatigue-weakness-erectile-dysfunction': 'symptoms',
+  'cpps-inflammation-sitting-pain': 'symptoms',
 
   // Causes & Risk
   'prostate-cancer-risk-factors': 'causes-risk',
