@@ -19,6 +19,12 @@ export function SiteFooter({ locale: _locale }: { locale: string }) {
           </div>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <Link
+              href="/notes"
+              className="text-neutral-500 transition-colors hover:text-neutral-900"
+            >
+              {tNav('notes')}
+            </Link>
+            <Link
               href="/about"
               className="text-neutral-500 transition-colors hover:text-neutral-900"
             >

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllArticles } from '@/lib/articles';
+import { getAllNotes } from '@/lib/notes';
 import { getCategoryForArticle } from '@/lib/article-categories';
 import { SITE_URL, SUPPORTED_LOCALES, localePath } from '@/lib/seo';
 
@@ -14,6 +15,7 @@ import { SITE_URL, SUPPORTED_LOCALES, localePath } from '@/lib/seo';
 const STATIC_LASTMOD: Record<string, string> = {
   '/': '2026-10-21',
   '/articles': '2026-11-02',
+  '/notes': '2026-11-11',
   '/about': '2026-10-21',
   '/privacy': '2026-10-21',
   '/cookies': '2026-10-21',
@@ -33,6 +35,7 @@ function categoryLastMod(slug: string, locale: string): string {
 const STATIC_PATHS = [
   '/',
   '/articles',
+  '/notes',
   '/about',
   '/privacy',
   '/cookies',
@@ -104,6 +107,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
             SUPPORTED_LOCALES.map((l) => [
               l,
               `${SITE_URL}${localePath(l, `/articles/${article.slug}`)}`,
+            ])
+          ),
+        },
+      });
+    }
+  }
+
+  // Notes — the micro-blog. Lower priority than articles: these are short,
+  // supplementary posts rather than pillar content.
+  for (const locale of SUPPORTED_LOCALES) {
+    for (const note of getAllNotes()) {
+      items.push({
+        url: `${SITE_URL}${localePath(locale, `/notes/${note.slug}`)}`,
+        lastModified: new Date(note.date),
+        changeFrequency: 'monthly',
+        priority: 0.5,
+        alternates: {
+          languages: Object.fromEntries(
+            SUPPORTED_LOCALES.map((l) => [
+              l,
+              `${SITE_URL}${localePath(l, `/notes/${note.slug}`)}`,
             ])
           ),
         },

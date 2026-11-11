@@ -116,6 +116,11 @@ export const menu: Menu = {
           labelKey: 'slowLiving',
           descriptionKey: 'slowLivingDesc',
         },
+        {
+          kind: 'link',
+          href: '/notes',
+          label: 'Notes',
+        },
       ],
     },
   ],

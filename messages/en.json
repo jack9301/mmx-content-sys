@@ -24,7 +24,8 @@
       "lifestyleDesc": "Articles on daily habits, prevention, and living with a condition.",
       "slowLiving": "Slow Living",
       "slowLivingDesc": "Essays about attention, observation, and a quieter pace of life."
-    }
+    },
+    "notes": "Notes"
   },
   "site": {
     "title": "Agubi Men's Health",
@@ -171,5 +172,16 @@
     "articles": "Browse all articles",
     "search": "Search the site",
     "backToSafety": "Back to safety"
+  },
+  "notes": {
+    "eyebrow": "Notes",
+    "indexTitle": "Notes",
+    "indexDescription": "Short thoughts, posted when I have them. Less polished than the articles, and probably more useful for that reason.",
+    "empty": "No notes yet.",
+    "pinned": "Pinned",
+    "readMore": "Read note",
+    "backToNotes": "All notes",
+    "older": "Older",
+    "newer": "Newer"
   }
 }
