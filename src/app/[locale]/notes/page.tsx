@@ -63,7 +63,6 @@ export default async function NotesIndexPage({
         <h1 className="font-serif text-5xl font-medium tracking-tight text-neutral-900">
           {t('indexTitle')}
         </h1>
-        <p className="mt-4 text-lg text-neutral-600">{t('indexDescription')}</p>
       </header>
 
       {notes.length === 0 ? (
