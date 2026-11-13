@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getAllArticles } from '@/lib/articles';
+import { getAllNotes } from '@/lib/notes';
 import { MostRead } from '@/components/most-read';
 import {
   SITE_NAME,
@@ -62,8 +63,10 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations('home');
   const tSite = await getTranslations('site');
+  const tNotes = await getTranslations('notes');
   const allArticles = getAllArticles(locale);
   const articles = allArticles.slice(0, 6);
+  const notes = getAllNotes().slice(0, 3);
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
@@ -121,6 +124,41 @@ export default async function HomePage({
           </div>
         )}
       </section>
+
+      {notes.length > 0 && (
+        <section className="mt-16">
+          <div className="mb-8 flex items-baseline justify-between">
+            <h2 className="font-serif text-2xl text-neutral-800">
+              {tNotes('indexTitle')}
+            </h2>
+            <Link
+              href={'/notes' as any}
+              className="text-sm text-[#0f766e] transition-colors hover:text-neutral-900"
+            >
+              {tNotes('backToNotes')} &rarr;
+            </Link>
+          </div>
+
+          <div className="divide-y divide-neutral-200 border-t border-neutral-200">
+            {notes.map((note) => (
+              <article key={note.slug} className="group py-5">
+                <Link href={`/notes/${note.slug}` as any} className="block">
+                  <time className="text-sm text-neutral-500">
+                    {new Date(note.date).toLocaleDateString(locale, {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                  <h3 className="mt-1 font-serif text-lg text-neutral-900 transition-colors group-hover:text-accent">
+                    {note.title}
+                  </h3>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       <MostRead
         articles={allArticles.map((a) => ({
