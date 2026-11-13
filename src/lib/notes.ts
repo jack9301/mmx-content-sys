@@ -80,3 +80,19 @@ export function getNoteBySlug(slug: string): Note | null {
 export function getLatestNote(): Note | null {
   return getAllNotes()[0] ?? null;
 }
+
+/**
+ * Plain-text preview of a note's body.
+ *
+ * Strips Markdown syntax so the excerpt can be used in meta tags and feed
+ * previews without leaking formatting characters into the text.
+ */
+export function noteExcerpt(note: Note, maxLength = 200): string {
+  const text = note.content
+    .replace(/^#+\s+.*$/gm, '')
+    .replace(/^[-*+]\s+/gm, '')
+    .replace(/[*_`>#\[\]]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return text.length > maxLength ? `${text.slice(0, maxLength).trimEnd()}...` : text;
+}
