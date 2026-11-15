@@ -21,6 +21,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'prostatitis-whole-body-effects': 'symptoms',
   'fatigue-weakness-erectile-dysfunction': 'symptoms',
   'cpps-inflammation-sitting-pain': 'symptoms',
+  'blood-in-urine-colour-symptoms': 'symptoms',
 
   // Causes & Risk
   'prostate-cancer-risk-factors': 'causes-risk',
