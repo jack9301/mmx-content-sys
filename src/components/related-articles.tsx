@@ -26,7 +26,10 @@ export function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
                   <img
                     src={a.coverImage}
                     alt=""
+                    width={640}
+                    height={360}
                     loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover"
                   />
                 </div>

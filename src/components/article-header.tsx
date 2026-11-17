@@ -45,6 +45,10 @@ export function ArticleHeader({
           <img
             src={article.coverImage}
             alt={article.title}
+            width={1376}
+            height={768}
+            decoding="async"
+            fetchPriority="high"
             className="h-auto w-full"
           />
         </div>
