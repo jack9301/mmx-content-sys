@@ -50,6 +50,7 @@ export const articleCategoryMap: Record<string, ArticleCategory> = {
   'finasteride-dutasteride-bph': 'treatment',
   'alpha-blockers-bph': 'treatment',
   'erectile-dysfunction-treatment': 'treatment',
+  'erectile-dysfunction-physical-fitness': 'treatment',
   'prostate-health-by-decade': 'conditions',
   'prostatitis-erectile-dysfunction': 'conditions',
   'erectile-dysfunction-prostate-connection': 'conditions',
